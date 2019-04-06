@@ -1,0 +1,4786 @@
+3
+      Top = 6
+      Width = 100
+      Height = 25
+      Caption = 'Bill'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 1
+      OnClick = btnInvoiceClick
+    end
+    object btnMR: TButton
+      Left = 117
+      Top = 7
+      Width = 140
+      Height = 25
+      Caption = 'M O N E Y   R E C E I P T'
+      TabOrder = 2
+      OnClick = btnMRClick
+    end
+  end
+  object edtW: TEdit
+    Left = 353
+    Top = 86
+    Width = 35
+    Height = 21
+    Color = clBtnFace
+    TabOrder = 30
+    Text = '0'
+    OnChange = edtWChange
+    OnKeyPress = edtWKeyPress
+  end
+  object edtL: TEdit
+    Left = 388
+    Top = 86
+    Width = 35
+    Height = 21
+    Color = clBtnFace
+    TabOrder = 31
+    Text = '0'
+    OnChange = edtLChange
+    OnKeyPress = edtLKeyPress
+  end
+  object edtMtr: TEdit
+    Left = 511
+    Top = 1
+    Width = 28
+    Height = 21
+    Color = clBtnFace
+    TabOrder = 32
+    Text = '61'
+    Visible = False
+    OnChange = edtMtrChange
+    OnKeyPress = edtMtrKeyPress
+  end
+  object edtSqIn: TEdit
+    Left = 635
+    Top = 1
+    Width = 38
+    Height = 21
+    Color = clBtnFace
+    TabOrder = 33
+    Text = '39.37'
+    Visible = False
+    OnChange = edtSqInChange
+  end
+  object edtR: TEdit
+    Left = 482
+    Top = 1
+    Width = 28
+    Height = 21
+    Color = clBtnFace
+    TabOrder = 34
+    Text = '1'
+    Visible = False
+    OnChange = edtRChange
+    OnKeyPress = edtRKeyPress
+  end
+  object edtQty: TEdit
+    Left = 422
+    Top = 86
+    Width = 35
+    Height = 21
+    Color = clScrollBar
+    TabOrder = 35
+    Text = '0'
+    OnChange = edtQtyChange
+    OnKeyPress = edtQtyKeyPress
+  end
+  object cboCBCode: TComboBox
+    Left = 216
+    Top = 308
+    Width = 95
+    Height = 21
+    Hint = 'Double Click to see the Details'
+    TabStop = False
+    Color = clBtnFace
+    ItemHeight = 13
+    TabOrder = 36
+    Visible = False
+  end
+  object cboSLCode: TComboBox
+    Left = 313
+    Top = 285
+    Width = 87
+    Height = 21
+    Hint = 'Double Click to see the Details'
+    TabStop = False
+    Color = clBtnFace
+    ItemHeight = 13
+    TabOrder = 37
+    Visible = False
+  end
+  object cboChCode: TComboBox
+    Left = 217
+    Top = 284
+    Width = 95
+    Height = 21
+    Hint = 'Double Click to see the Details'
+    TabStop = False
+    Color = clBtnFace
+    ItemHeight = 13
+    TabOrder = 38
+    Visible = False
+  end
+  object edtVNoJV: TEdit
+    Left = 92
+    Top = 284
+    Width = 121
+    Height = 21
+    Color = clScrollBar
+    Enabled = False
+    TabOrder = 39
+    Text = '0'
+    OnChange = edtVNoJVChange
+  end
+  object edtVNoCR: TEdit
+    Left = 92
+    Top = 306
+    Width = 121
+    Height = 21
+    Color = clScrollBar
+    Enabled = False
+    TabOrder = 40
+    Text = '0'
+  end
+  object edtVNoBR: TEdit
+    Left = 92
+    Top = 332
+    Width = 121
+    Height = 21
+    Color = clScrollBar
+    Enabled = False
+    TabOrder = 41
+    Text = '0'
+  end
+  object edtChqNo: TEdit
+    Left = 268
+    Top = 332
+    Width = 93
+    Height = 21
+    Color = clBtnFace
+    TabOrder = 42
+    Text = '0'
+    OnChange = edtAdvCChange
+  end
+  object dtpChqDate: TDateTimePicker
+    Left = 392
+    Top = 332
+    Width = 81
+    Height = 21
+    CalAlignment = dtaLeft
+    Date = 37316.3652602893
+    Time = 37316.3652602893
+    Color = clBtnFace
+    DateFormat = dfShort
+    DateMode = dmComboBox
+    Kind = dtkDate
+    ParseInput = False
+    TabOrder = 43
+    OnKeyPress = dtpSPDateKeyPress
+  end
+  object DSSPTDetail: TDataSource
+    DataSet = tblSPTDetail
+    Left = 301
+    Top = 151
+  end
+  object sp_SP: TStoredProc
+    AutoCalcFields = False
+    AutoRefresh = True
+    DatabaseName = 'Karbar'
+    StoredProcName = 'sp_Trans;1'
+    Left = 368
+    Top = 160
+    ParamData = <
+      item
+        DataType = ftInteger
+        Name = 'RETURN_VALUE'
+        ParamType = ptResult
+      end
+      item
+        DataType = ftSmallint
+        Name = '@QryType'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftSmallint
+        Name = '@SPType'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftString
+        Name = '@SPID'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftString
+        Name = '@Ref'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftString
+        Name = '@SectID'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftString
+        Name = '@DeptID'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftString
+        Name = '@ContID'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftDateTime
+        Name = '@SPDate'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftString
+        Name = '@Addr'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftString
+        Name = '@SPBy'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftString
+        Name = '@SuppID'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftString
+        Name = '@ManuID'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftString
+        Name = '@ReqID'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftDateTime
+        Name = '@ReqDate'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftInteger
+        Name = '@VNoJV'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftInteger
+        Name = '@VNoCR'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftInteger
+        Name = '@VNoBR'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftString
+        Name = '@ACode'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftFloat
+        Name = '@VATP'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftFloat
+        Name = '@VATA'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftFloat
+        Name = '@DiscP'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftFloat
+        Name = '@DiscA'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftFloat
+        Name = '@SChargeA'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftFloat
+        Name = '@Gross'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftFloat
+        Name = '@AdvC'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftFloat
+        Name = '@AdvB'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftFloat
+        Name = '@Net'
+        ParamType = ptInput
+      end>
+  end
+  object tblSPTDetail: TTable
+    CachedUpdates = True
+    DatabaseName = 'Karbar'
+    TableName = 'dbo.SPTDetail'
+    Left = 265
+    Top = 151
+    object tblSPTDetailSPID: TStringField
+      FieldName = 'SPID'
+      FixedChar = True
+      Size = 6
+    end
+    object tblSPTDetailItemID: TStringField
+      FieldName = 'ItemID'
+      FixedChar = True
+      Size = 8
+    end
+    object tblSPTDetailIName: TStringField
+      FieldName = 'IName'
+      Size = 100
+    end
+    object tblSPTDetailAcode: TStringField
+      FieldName = 'Acode'
+      FixedChar = True
+      Size = 13
+    end
+    object tblSPTDetailTNo: TSmallintField
+      FieldName = 'TNo'
+    end
+    object tblSPTDetailSQty: TFloatField
+      FieldName = 'SQty'
+    end
+    object tblSPTDetailSPrice: TFloatField
+      FieldName = 'SPrice'
+    end
+    object tblSPTDetailIDiscP: TFloatField
+      FieldName = 'IDiscP'
+    end
+    object tblSPTDetailTotal: TFloatField
+      FieldName = 'Total'
+    end
+    object tblSPTDetailUOMID: TStringField
+      FieldName = 'UOMID'
+      FixedChar = True
+      Size = 10
+    end
+    object tblSPTDetailPQty: TFloatField
+      FieldName = 'PQty'
+    end
+    object tblSPTDetailPPrice: TFloatField
+      FieldName = 'PPrice'
+    end
+    object tblSPTDetailOQty: TFloatField
+      FieldName = 'OQty'
+    end
+    object tblSPTDetailDQty: TFloatField
+      FieldName = 'DQty'
+    end
+    object tblSPTDetailBQty: TFloatField
+      FieldName = 'BQty'
+    end
+    object tblSPTDetailEmpID: TStringField
+      FieldName = 'EmpID'
+      FixedChar = True
+      Size = 6
+    end
+    object tblSPTDetailEmpName: TStringField
+      FieldKind = fkLookup
+      FieldName = 'EmpName'
+      LookupDataSet = frmEmp.QryEmp
+      LookupKeyFields = 'EmpID'
+      LookupResultField = 'EmpName'
+      KeyFields = 'EmpID'
+      Size = 50
+      Lookup = True
+    end
+  end
+  object sp_SPTDetail: TStoredProc
+    DatabaseName = 'Karbar'
+    StoredProcName = 'sp_TransTDetail;1'
+    Left = 408
+    Top = 157
+    ParamData = <
+      item
+        DataType = ftInteger
+        Name = 'RETURN_VALUE'
+        ParamType = ptResult
+      end
+      item
+        DataType = ftSmallint
+        Name = '@SPType'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftString
+        Name = '@SPID'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftString
+        Name = '@ItemID'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftString
+        Name = '@IName'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftString
+        Name = '@EmpID'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftString
+        Name = '@Acode'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftSmallint
+        Name = '@Tno'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftFloat
+        Name = '@SQty'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftFloat
+        Name = '@SPrice'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftFloat
+        Name = '@PQty'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftFloat
+        Name = '@PPrice'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftFloat
+        Name = '@IDiscP'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftFloat
+        Name = '@Total'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftString
+        Name = '@UOMID'
+        ParamType = ptInput
+      end>
+  end
+  object QryEmp: TQuery
+    DatabaseName = 'Karbar'
+    SQL.Strings = (
+      'Select EmpID,EmpName from Employee')
+    Left = 440
+    Top = 154
+    object QryEmpEmpID: TStringField
+      FieldName = 'EmpID'
+      Origin = 'KARBAR.Employee.EmpID'
+      FixedChar = True
+      Size = 6
+    end
+    object QryEmpEmpName: TStringField
+      FieldName = 'EmpName'
+      Origin = 'KARBAR.Employee.EmpName'
+      Size = 30
+    end
+  end
+end
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          unit Trans;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
+  StdCtrls, DBCtrls, Grids, DBGrids, QuickRpt, Qrctrls, ExtCtrls, DBCGrids,
+  Db, DBTables, ComCtrls, Abcdbatl, DBLookup, Mask, Abccurlb, Abcdbcur,
+  Abcbtn, Abchandl, Abcmm, Abcatlab, lmdcctrl, lmdctrl,
+  lmdeditb, lmdmemoc, LMDMemo, lmdmmS, lmdbtn, lmdshapA, inifiles;
+
+type
+  TfrmTrans = class(TForm)
+    DSSPTDetail: TDataSource;
+    Panel5: TPanel;
+    btnAdd: TLMDShapeButton;
+    btnSave: TLMDShapeButton;
+    cboSectName: TComboBox;
+    Label3: TLabel;
+    lblSectName: TLabel;
+    lblCont: TLabel;
+    cboCNCode: TComboBox;
+    edtBAddr: TEdit;
+    lblIndentDate: TLabel;
+    lblDeptName: TLabel;
+    Label12: TLabel;
+    Label14: TLabel;
+    Label15: TLabel;
+    Label16: TLabel;
+    Label18: TLabel;
+    Label19: TLabel;
+    edtItemID: TEdit;
+    edtIName: TEdit;
+    edtSQty: TEdit;
+    edtPPrice: TEdit;
+    edtDisc: TEdit;
+    cboUOM: TComboBox;
+    edtTotal: TEdit;
+    btnNext: TButton;
+    DBGrid1: TDBGrid;
+    dtpIndentDate: TDateTimePicker;
+    edtTIW: TEdit;
+    Label2: TLabel;
+    cboDeptName: TComboBox;
+    btnITSelect: TButton;
+    lblReq: TLabel;
+    lblReqdate: TLabel;
+    lblIndent: TLabel;
+    cboIndentID: TComboBox;
+    dtpReqDate: TDateTimePicker;
+    cboReqID: TComboBox;
+    btnClear: TLMDShapeButton;
+    btnClearAll: TLMDShapeButton;
+    btnUpdate: TButton;
+    edtPQty: TEdit;
+    cboSPID: TComboBox;
+    dtpSPDate: TDateTimePicker;
+    tblSPTDetail: TTable;
+    sp_SP: TStoredProc;
+    sp_SPTDetail: TStoredProc;
+    rdoSPType: TRadioGroup;
+    cboSPBy: TComboBox;
+    edtSPrice: TEdit;
+    tblSPTDetailSPID: TStringField;
+    tblSPTDetailItemID: TStringField;
+    tblSPTDetailIName: TStringField;
+    tblSPTDetailAcode: TStringField;
+    tblSPTDetailTNo: TSmallintField;
+    tblSPTDetailSQty: TFloatField;
+    tblSPTDetailSPrice: TFloatField;
+    tblSPTDetailIDiscP: TFloatField;
+    tblSPTDetailTotal: TFloatField;
+    tblSPTDetailUOMID: TStringField;
+    tblSPTDetailPQty: TFloatField;
+    tblSPTDetailPPrice: TFloatField;
+    tblSPTDetailOQty: TFloatField;
+    tblSPTDetailDQty: TFloatField;
+    tblSPTDetailBQty: TFloatField;
+    tblSPTDetailEmpID: TStringField;
+    cboEmpName: TComboBox;
+    tblSPTDetailEmpName: TStringField;
+    Label11: TLabel;
+    QryEmp: TQuery;
+    QryEmpEmpID: TStringField;
+    QryEmpEmpName: TStringField;
+    Panel1: TPanel;
+    lblSTotalCap: TLabel;
+    lblGross: TLabel;
+    Label4: TLabel;
+    lblNet: TLabel;
+    lblDue: TLabel;
+    edtAdvC: TEdit;
+    Panel2: TPanel;
+    btnClose: TButton;
+    btnInvoice: TButton;
+    btnMR: TButton;
+    edtW: TEdit;
+    edtL: TEdit;
+    Label13: TLabel;
+    Label21: TLabel;
+    edtMtr: TEdit;
+    edtSqIn: TEdit;
+    Label22: TLabel;
+    Label23: TLabel;
+    Label24: TLabel;
+    Label25: TLabel;
+    edtR: TEdit;
+    edtQty: TEdit;
+    Label26: TLabel;
+    Label27: TLabel;
+    edtAdvB: TEdit;
+    cboCBCode: TComboBox;
+    cboSLCode: TComboBox;
+    cboChCode: TComboBox;
+    edtVNoJV: TEdit;
+    edtVNoCR: TEdit;
+    edtVNoBR: TEdit;
+    lblJVCode: TLabel;
+    lblCRCode: TLabel;
+    lblBRCode: TLabel;
+    Label1: TLabel;
+    edtChqNo: TEdit;
+    Label5: TLabel;
+    dtpChqDate: TDateTimePicker;
+    Label6: TLabel;
+    edtVATP: TEdit;
+    edtVATA: TEdit;
+    edtDiscP: TEdit;
+    Label7: TLabel;
+    edtDiscA: TEdit;
+    Label9: TLabel;
+    edtSChargeA: TEdit;
+    Label8: TLabel;
+    procedure btnCloseClick(Sender: TObject);
+    procedure FormActivate(Sender: TObject);
+    procedure btnAddClick(Sender: TObject);
+    procedure LMD3DCaptionButton3Click(Sender: TObject);
+    procedure cboCNCodeChange(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+    procedure btnSaveClick(Sender: TObject);
+    procedure btnClearClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure LMDShapeButton1Click(Sender: TObject);
+    procedure btnNextClick(Sender: TObject);
+    procedure edtSQtyChange(Sender: TObject);
+    procedure edtPPriceChange(Sender: TObject);
+    procedure edtDiscChange(Sender: TObject);
+    procedure edtTotalChange(Sender: TObject);
+    procedure edtAdvCChange(Sender: TObject);
+//    procedure btnPostClick(Sender: TObject);
+    procedure btnITSelectClick(Sender: TObject);
+    procedure DBGrid1DblClick(Sender: TObject);
+    procedure btnUpdateClick(Sender: TObject);
+    procedure btnClearAllClick(Sender: TObject);
+    procedure cboSPIDClick(Sender: TObject);
+    procedure cboSPIDKeyPress(Sender: TObject; var Key: Char);
+    procedure dtpSPDateKeyPress(Sender: TObject; var Key: Char);
+    procedure cboSPByKeyPress(Sender: TObject; var Key: Char);
+    procedure cboCNCodeKeyPress(Sender: TObject; var Key: Char);
+    procedure cboSectNameKeyPress(Sender: TObject; var Key: Char);
+    procedure cboDeptNameKeyPress(Sender: TObject; var Key: Char);
+    procedure cboReqIDKeyPress(Sender: TObject; var Key: Char);
+    procedure dtpReqDateKeyPress(Sender: TObject; var Key: Char);
+    procedure cboUOMKeyPress(Sender: TObject; var Key: Char);
+    procedure edtDiscKeyPress(Sender: TObject; var Key: Char);
+    procedure edtSQtyKeyPress(Sender: TObject; var Key: Char);
+    procedure edtPQtyKeyPress(Sender: TObject; var Key: Char);
+    procedure edtSPriceKeyPress(Sender: TObject; var Key: Char);
+    procedure edtPPriceKeyPress(Sender: TObject; var Key: Char);
+    procedure edtPQtyChange(Sender: TObject);
+    procedure btnInvoiceClick(Sender: TObject);
+    procedure cboEmpNameKeyPress(Sender: TObject; var Key: Char);
+    procedure edtWKeyPress(Sender: TObject; var Key: Char);
+    procedure edtLKeyPress(Sender: TObject; var Key: Char);
+    procedure edtWChange(Sender: TObject);
+    procedure edtLChange(Sender: TObject);
+    procedure btnMRClick(Sender: TObject);
+    procedure edtMtrChange(Sender: TObject);
+    procedure edtMtrKeyPress(Sender: TObject; var Key: Char);
+    procedure edtSqInChange(Sender: TObject);
+    procedure edtRKeyPress(Sender: TObject; var Key: Char);
+    procedure edtRChange(Sender: TObject);
+    procedure edtTotalKeyPress(Sender: TObject; var Key: Char);
+    procedure edtQtyChange(Sender: TObject);
+    procedure edtQtyKeyPress(Sender: TObject; var Key: Char);
+    procedure edtAdvBChange(Sender: TObject);
+    procedure edtVNoJVChange(Sender: TObject);
+    procedure edtDiscPChange(Sender: TObject);
+    procedure edtVATPChange(Sender: TObject);
+    procedure edtSChargeAChange(Sender: TObject);
+  private
+    { Private declarations }
+    mTNo,QryType :Integer;
+    mSTotal,mGTotal,ttl,iqty,rqty : Double;
+    Sql,mACode, mContID,mDeptID,mSectID : string;
+    dtp,mVNoJV,mVNoBR,mVNoCR,mVDesc,mPayee,mEntryDT,mSLCode,mCHCode,mCBCode,mCNCode,edtAdv  : string;
+    sqt,spr,pqt,ppr,spttl,qt : double;
+    Ln, mRLQty : Integer;
+    //mMTQty,mDetailID : Integer;
+    procedure CalTotal;
+  public
+    { Public declarations }
+    mSPType : integer;
+    mContType : string;
+end;
+
+var
+  frmTrans: TfrmTrans;
+
+implementation
+
+{$R *.DFM}
+uses DMKB,KBRVar,ITSelect,RBill,Emp,Invoice,MR;
+
+procedure TfrmTrans.btnCloseClick(Sender: TObject);
+begin
+ Close;
+end;
+
+procedure TfrmTrans.FormActivate(Sender: TObject);
+var
+sql : string;
+begin
+  sql := '';
+  sql := 'Select EmpID, EmpName, UserName From Employee Where UserName = ' + QuotedStr(iUserID);
+  DM.CallSQL1(sql);
+  cboSPBy.Text := DM.qryFR1.Fields[1].AsString + ' - ' + DM.qryFR1.Fields[0].AsString;
+
+  sql := '';
+//  sql := 'Select ContName + ' + QuotedStr(' - ') + ' + ContID From Contact Where ContType = ' + QuotedStr(mContType) + ' Order by ContName';
+//  DM.cboAdd(cboContName,sql);
+  DM.cboAdd(cboSPID,'Select SPID From SP where SPType = ' + IntToStr(mSPType) + ' Order By SPID Desc');
+  if imnuSector = 1 then
+  begin
+    lblSectName.Visible := True;
+    cboSectName.Visible := True;
+    DM.cboAdd(cboSectName,'Select SectID + SectName From Sector');
+  end
+  else
+  begin
+    lblSectName.Visible := False;
+    cboSectName.Visible := False;
+  end;
+
+  if imnuDepartment = 1 then
+  begin
+    cboDeptName.Visible := True;
+    lblDeptName.Visible := True;
+    DM.cboAdd(cboDeptName,'Select DeptID+DeptName From Department');
+  end
+  else
+  begin
+    lblDeptName.Visible := False;
+    cboDeptName.Visible := False;
+  end;
+  mTNo := 0;
+  mSTotal := 0;
+  mGTotal := 0;
+  dtpSPDate.Date := Date;
+  DM.CallSQL2('Delete From SPTDetail');
+  tblSPTDetail.Close;
+  tblSPTDetail.Open;
+  edtAdvC.Text := '0';
+  edtAdvB.Text := '0';
+  edtVnoJV.Text := '';
+  edtVNoCR.Text := '';
+  edtVNoBR.Text := '';
+end;
+
+procedure TfrmTrans.btnAddClick(Sender: TObject);
+begin
+  DM.CallSQL2('Delete From SPTDetail');
+  tblSPTDetail.Close;
+  tblSPTDetail.Open;
+  dtpSPDate.DateTime := Date;
+
+  DM.GetID('SPID','SP','000001','');
+  cboSPID.Text := DM.SetResult;
+  QryType := 1;
+//  Caption := msgAdd;
+  btnSave.Enabled := True;
+  lblGross.Caption := '0';
+  edtAdvC.Text := '0';
+  edtAdvB.Text := '0';
+  edtVATA.Text := '0';
+  edtDiscA.Text := '0';
+  edtSChargeA.Text := '0';
+  lblNet.Caption := '0';
+  edtTIW.Text := '';
+//  pnlVoucher.Enabled := True;
+end;
+
+procedure TfrmTrans.LMD3DCaptionButton3Click(Sender: TObject);
+begin
+Close;
+end;
+
+
+procedure TfrmTrans.cboCNCodeChange(Sender: TObject);
+begin
+  sql := '';
+  sql := 'Select ACode, AHead, Addr From COA Where ACode = ' + QuotedStr(Copy(cboCNCode.Text,Length(cboCNCode.Text) - 10,Length(cboCNCode.Text)));
+  DM.CallSQL1(SQL);
+  mACode := DM.qryFR1.Fields[0].AsString;
+  //cboContName.caption := DM.qryFR1.Fields[1].AsString;
+  edtBAddr.Text := DM.qryFR1.Fields[2].AsString;
+//  cboSectName.Text := DM.qryFR1.Fields[2].AsString + DM.qryFR1.Fields[3].AsString;
+//  cboDeptName.Text := DM.qryFR1.Fields[4].AsString + DM.qryFR1.Fields[5].AsString;
+{  sql := '';
+  sql := 'Select ContID, ContName, Addr From Contact Where ACode = ' + QuotedStr(Copy(cboCNCode.Text,Length(cboCNCode.Text) - 10,Length(cboCNCode.Text)));
+  DM.CallSQL1(SQL);
+  mContID := DM.qryFR1.Fields[0].AsString;
+  //cboContName.caption := DM.qryFR1.Fields[1].AsString;
+  edtBAddr.Text := DM.qryFR1.Fields[2].AsString;
+//  cboSectName.Text := DM.qryFR1.Fields[2].AsString + DM.qryFR1.Fields[3].AsString;
+//  cboDeptName.Text := DM.qryFR1.Fields[4].AsString + DM.qryFR1.Fields[5].AsString;}
+
+
+end;
+
+procedure TfrmTrans.Button2Click(Sender: TObject);
+begin
+Close;
+end;
+
+procedure TfrmTrans.btnSaveClick(Sender: TObject);
+var
+ir,dtSP,dtreq, dtpChq : string;
+vno,Ln : integer;
+begin
+  dtSP := FormatDateTime('mm/dd/yyyy', dtpSPDate.Date);
+  dtreq := FormatDateTime('mm/dd/yyyy', dtpReqDate.Date);
+  dtp := FormatDateTime('mm/dd/yyyy', dtpSPDate.Date);
+  dtpChq := FormatDateTime('mm/dd/yyyy', dtpChqDate.Date);
+
+  if iCOALevel = 4 then Ln := 7 else Ln := 10;
+  Ln := Ln - 1;
+  mSLCode := Copy(cboSLCode.Text,Length(cboSLCode.Text) - Ln,Length(cboSLCode.Text));
+  mChCode := Copy(cbochCode.Text,Length(cbochCode.Text) - Ln,Length(cbochCode.Text));
+  mCBCode := Copy(cboCBCode.Text,Length(cboCBCode.Text) - Ln,Length(cboCBCode.Text));
+  mCNCode := Copy(cboCNCode.Text,Length(cboCNCode.Text) - Ln,Length(cboCNCode.Text));
+  mVDesc := '#BR Posted from Inventory.';
+  mPayee := Copy(cboCNCode.Text,1,Length(cboCNCode.Text) - 12);
+  mEntryDT := DateToStr(Date) + ' / ' + TimeToStr(Time);
+
+if QryType = 1 then
+begin
+  //==========calculation for JV
+  sql := '';
+  sql := 'Select Isnull(max(VNo),0) + 1 from ' + iCYVData + ' Where VType=' + QuotedStr('JV');
+  DM.CallSQL1(sql);
+  edtVNoJV.Text := DM.qryFR1.Fields[0].AsString;
+
+  //==========calculation for CR
+  sql := '';
+  sql := 'select Isnull(max(VNo),0) + 1 from ' + iCYVData + ' Where VType=' + QuotedStr('CR');
+  DM.CallSQL1(sql);
+  edtVNoCR.Text := DM.qryFR1.Fields[0].AsString;
+
+  //==========calculation for BR:
+  sql := '';
+  sql := 'select Isnull(max(VNo),0) + 1 from ' + iCYVData + ' Where VType=' + QuotedStr('BR');
+  DM.CallSQL1(sql);
+  edtVNoBR.Text := DM.qryFR1.Fields[0].AsString;
+end;
+
+  with sp_SP do
+  begin
+    ParamByName('@QryType').AsInteger := QryType;
+    ParamByName('@SPType').AsInteger := mSPType;
+    ParamByName('@SPID').AsString :=  cboSPID.Text;
+    ParamByName('@SPDate').AsString := dtSP;
+    ParamByName('@SPBy').AsString := iUserID;   // Copy(cboSPBy.Text,Length(cboSPBy.Text) - 5,Length(cboSPBy.Text));
+    ParamByName('@ACode').AsString :=  Copy(cboCNCode.Text,Length(cboCNCode.Text) - 9,Length(cboCNCode.Text));
+//    ParamByName('@ContID').AsString :=  Copy(cboCNCode.Text,Length(cboCNCode.Text) - 3,Length(cboCNCode.Text));
+    ParamByName('@SectID').AsString :=  Copy(cboSectName.Text, 1, 2);
+    ParamByName('@DeptID').AsString := Copy(cboDeptName.Text, 1, 2);
+    ParamByName('@ReqID').AsString :=  cboReqID.Text;
+    ParamByName('@ReqDate').AsString := dtreq;
+    ParamByName('@VNoJV').AsString := edtVNoJV.Text;
+    ParamByName('@VNoCR').AsString := edtVNoCR.Text;
+    ParamByName('@VNoBR').AsString := edtVNoBR.Text;
+    ParamByName('@VATP').AsString := edtVATP.Text;
+    ParamByName('@VATA').AsString := edtVATA.Text;
+    ParamByName('@DiscP').AsString := edtDiscP.Text;
+    ParamByName('@DiscA').AsString := edtDiscA.Text;
+    ParamByName('@SChargeA').AsString := edtSChargeA.Text;
+    ParamByName('@Gross').AsString := lblGross.Caption;
+//  ParamByName('@Freight').AsString := edtAdvC.Text;
+    ParamByName('@AdvC').AsString := edtAdvC.Text;
+    ParamByName('@AdvB').AsString := edtAdvB.Text;
+    ParamByName('@Net').AsString := lblNet.Caption;
+  ExecProc;
+  end;
+
+  if QryType = 1 then
+  begin
+
+  if StrtoFloat(lblNet.Caption) > 0 then
+  begin
+    //========JV
+//    sql := '';
+//    sql := 'Select Isnull(max(VNo),0) + 1 from ' + iCYVData + ' Where VType=' + QuotedStr('JV');
+//    DM.CallSQL1(sql);
+//    edtVNoJV.Text := DM.qryFR1.Fields[0].AsString;
+    sql := '';
+    sql := 'Insert Into ' + iCYVData + '(VDate, VDType, VType, VNo, TNo, ACode, RCode, VDesc, Payee, BillNo, BillDate, ChqNo, ChqDate, CompID, SectID, DeptID, Debit, Credit, UserID, EntryDT, IsConf) Values (';
+    sql := sql + QuotedStr(dtp) + ', ' + QuotedStr('TRAN') + ', ' + QuotedStr('JV') + ', ' + edtVNoJV.Text + ', ' + '1' + ', ' + QuotedStr(mCNCode) + ', ' + QuotedStr(mCNCode) + ', ' + QuotedStr('Posted for Bill # ' + cboSPID.Text) + ', ' + QuotedStr(mPayee) + ', ' + QuotedStr(cboSPID.Text)+ ', ' + QuotedStr(dtp)+ ', ' + QuotedStr(edtChqNo.Text) + ', ' + QuotedStr(dtpChq) + ', ' + QuotedStr('01') + ', ' + QuotedStr('01') + ', ' + QuotedStr('01') + ', ' + lblNet.Caption + ', ' + '0' + ',' + QuotedStr(iUserID) + ', ' + QuotedStr(mEntryDT) + ', ' + QuotedStr('T') + ')';
+    DM.CallSQL2(sql);
+    sql := '';
+    sql := 'Insert Into ' + iCYVData + '(VDate, VDType, VType, VNo, TNo, ACode, RCode, VDesc, Payee, BillNo, BillDate, ChqNo, ChqDate, CompID, SectID, DeptID, Debit, Credit, UserID, EntryDT, IsConf) Values (';
+    sql := sql + QuotedStr(dtp) + ', ' + QuotedStr('TRAN') + ', ' + QuotedStr('JV') + ', ' + edtVNoJV.Text + ', ' + '2' + ', ' + QuotedStr(mSLCode) + ', ' + QuotedStr(mCNCode) + ', ' + QuotedStr('Posted for Bill # ' + cboSPID.Text) + ', ' + QuotedStr(mPayee) + ', ' + QuotedStr(cboSPID.Text)+ ', ' + QuotedStr(dtp)+ ', ' + QuotedStr(edtChqNo.Text) + ', ' + QuotedStr(dtpChq) + ', ' + QuotedStr('01') + ', ' + QuotedStr('01') + ', ' + QuotedStr('01') + ', ' + '0' + ', ' + lblNet.Caption + ', ' + QuotedStr(iUserID) + ', ' + QuotedStr(mEntryDT) + ', ' + QuotedStr('T') + ')';
+    DM.CallSQL2(sql);
+    end;
+    //=======CR
+//    sql := '';
+//    sql := 'select Isnull(max(VNo),0) + 1 from ' + iCYVData + ' Where VType=' + QuotedStr('CR');
+//    DM.CallSQL1(sql);
+//    edtVNoCR.Text := DM.qryFR1.Fields[0].AsString;
+
+
+    if StrToFloat(edtAdvC.Text) > 0 then
+    begin
+    sql := '';
+    sql := 'Insert Into ' + iCYVData + '(VDate, VDType, VType, VNo, TNo, ACode, RCode, VDesc, Payee, BillNo, BillDate, ChqNo, ChqDate, CompID, SectID, DeptID, Debit, Credit, UserID, EntryDT, IsConf) Values (';
+    sql := sql + QuotedStr(dtp) + ', ' + QuotedStr('TRAN') + ', ' + QuotedStr('CR') + ', ' + edtVNoCR.Text + ', ' + '1' + ', ' + QuotedStr(mChCode) + ', ' + QuotedStr(mChCode) + ', ' + QuotedStr('Posted for Bill # ' + cboSPID.Text) + ', ' + QuotedStr(mPayee) + ', ' + QuotedStr(cboSPID.Text)+ ', ' + QuotedStr(dtp)+ ', ' + QuotedStr(edtChqNo.Text) + ', ' + QuotedStr(dtpChq) + ', ' + QuotedStr('01') + ', ' + QuotedStr('01') + ', ' + QuotedStr('01') + ', ' + edtAdvC.Text + ', ' + '0' + ',' + QuotedStr(iUserID) + ', ' + QuotedStr(mEntryDT) + ', ' + QuotedStr('T') + ')';
+    DM.CallSQL2(sql);
+    sql := '';
+    sql := 'Insert Into ' + iCYVData + '(VDate, VDType, VType, VNo, TNo, ACode, RCode, VDesc, Payee, BillNo, BillDate, ChqNo, ChqDate, CompID, SectID, DeptID, Debit, Credit, UserID, EntryDT, IsConf) Values (';
+    sql := sql + QuotedStr(dtp) + ', ' + QuotedStr('TRAN') + ', ' + QuotedStr('CR') + ', ' + edtVNoCR.Text + ', ' + '2' + ', ' + QuotedStr(mSLCode) + ', ' + QuotedStr(mChCode) + ', ' + QuotedStr('Posted for Bill # ' + cboSPID.Text) + ', ' + QuotedStr(mPayee) + ', ' + QuotedStr(cboSPID.Text)+ ', ' + QuotedStr(dtp)+ ', ' + QuotedStr(edtChqNo.Text) + ', ' + QuotedStr(dtpChq) + ', ' + QuotedStr('01') + ', ' + QuotedStr('01') + ', ' + QuotedStr('01') + ', ' + '0' + ', ' + edtAdvC.Text + ', ' + QuotedStr(iUserID) + ', ' + QuotedStr(mEntryDT) + ', ' + QuotedStr('T') + ')';
+    DM.CallSQL2(sql);
+    end;
+    //========BR
+//    sql := '';
+//    sql := 'select Isnull(max(VNo),0) + 1 from ' + iCYVData + ' Where VType=' + QuotedStr('BR');
+//    DM.CallSQL1(sql);
+//    edtVNoBR.Text := DM.qryFR1.Fields[0].AsString;
+
+  if StrToFloat(edtAdvB.Text) > 0 then
+  begin
+    sql := '';
+    sql := 'Insert Into ' + iCYVData + '(VDate, VDType, VType, VNo, TNo, ACode, RCode, VDesc, Payee, BillNo, BillDate, ChqNo, ChqDate, CompID, SectID, DeptID, Debit, Credit, UserID, EntryDT, IsConf) Values (';
+    sql := sql + QuotedStr(dtp) + ', ' + QuotedStr('TRAN') + ', ' + QuotedStr('BR') + ', ' + edtVNoBR.Text + ', ' + '1' + ', ' + QuotedStr(mCBCode) + ', ' + QuotedStr(mCBCode) + ', ' + QuotedStr('Posted for Bill # ' + cboSPID.Text) + ', ' + QuotedStr(mPayee) + ', ' + QuotedStr(cboSPID.Text)+ ', ' + QuotedStr(dtp)+ ', ' + QuotedStr(edtChqNo.Text) + ', ' + QuotedStr(dtpChq) + ', ' + QuotedStr('01') + ', ' + QuotedStr('01') + ', ' + QuotedStr('01') + ', ' + edtAdvB.Text + ', ' + '0' + ',' + QuotedStr(iUserID) + ', ' + QuotedStr(mEntryDT) + ', ' + QuotedStr('T') + ')';
+    DM.CallSQL2(sql);
+    sql := '';
+    sql := 'Insert Into ' + iCYVData + '(VDate, VDType, VType, VNo, TNo, ACode, RCode, VDesc, Payee, BillNo, BillDate, ChqNo, ChqDate, CompID, SectID, DeptID, Debit, Credit, UserID, EntryDT, IsConf) Values (';
+    sql := sql + QuotedStr(dtp) + ', ' + QuotedStr('TRAN') + ', ' + QuotedStr('BR') + ', ' + edtVNoBR.Text + ', ' + '2' + ', ' + QuotedStr(mSLCode) + ', ' + QuotedStr(mCBCode) + ', ' + QuotedStr('Posted for Bill # ' + cboSPID.Text) + ', ' + QuotedStr(mPayee) + ', ' + QuotedStr(cboSPID.Text)+ ', ' + QuotedStr(dtp)+ ', ' + QuotedStr(edtChqNo.Text) + ', ' + QuotedStr(dtpChq) + ', ' + QuotedStr('01') + ', ' + QuotedStr('01') + ', ' + QuotedStr('01') + ', ' + '0' + ', ' + edtAdvB.Text + ', ' + QuotedStr(iUserID) + ', ' + QuotedStr(mEntryDT) + ', ' + QuotedStr('T') + ')';
+    DM.CallSQL2(sql);
+    end;
+    ShowMessage('Voucher Saved Successfully');
+    end
+ else if QryType = 2 then
+    begin
+    //====== Juornal Voucher
+    sql := '';
+    sql := 'Update ' + iCYVData + ' Set VDate = ' + QuotedStr(dtp) + ', VDType= ' + QuotedStr('TRAN') + ', VType= ' + QuotedStr('JV') + ', VNo= ' + edtVNoJV.Text + ', ACode=' + QuotedStr(mCNCode) + ', RCode=' + QuotedStr(mCNCode) + ', VDesc=' + QuotedStr('Posted for Bill # ' + cboSPID.Text) + ', Payee=' + QuotedStr(mPayee) + ', BillNo=' + QuotedStr(cboSPID.Text)+ ', BillDate=' + QuotedStr(dtp)+ ', ChqNo=' + QuotedStr(edtChqNo.Text) + ', ChqDate=' + QuotedStr(dtpChq) + ', CompID=' + QuotedStr('01') + ', SectID=' + QuotedStr('01') + ', DeptID=' + QuotedStr('01') + ', Debit=' + lblNet.Caption + ', Credit=0, UserID=' + QuotedStr(iUserID) + ', EntryDT=' + QuotedStr(mEntryDT) + ', IsConf=' + QuotedStr('T') + ' where VType = ' + QuotedStr('JV') + '  AND VNo= ' + edtVNoJV.Text  + ' AND TNo=1';
+    DM.CallSQL2(sql);
+
+    sql := '';
+    sql := 'Update ' + iCYVData + ' Set VDate = ' + QuotedStr(dtp) + ', VDType= ' + QuotedStr('TRAN') + ', VType= ' + QuotedStr('JV') + ', VNo= ' + edtVNoJV.Text + ', ACode=' + QuotedStr(mSLCode) + ', RCode=' + QuotedStr(mCNCode) + ', VDesc=' + QuotedStr('Posted for Bill # ' + cboSPID.Text) + ', Payee=' + QuotedStr(mPayee) + ', BillNo=' + QuotedStr(cboSPID.Text)+ ', BillDate=' + QuotedStr(dtp)+ ', ChqNo=' + QuotedStr(edtChqNo.Text) + ', ChqDate=' + QuotedStr(dtpChq) + ', CompID=' + QuotedStr('01') + ', SectID=' + QuotedStr('01') + ', DeptID=' + QuotedStr('01') + ', Debit=0, Credit=' + lblNet.Caption + ', UserID=' + QuotedStr(iUserID) + ', EntryDT=' + QuotedStr(mEntryDT) + ', IsConf=' + QuotedStr('T') + ' where VType = ' + QuotedStr('JV') + '  AND VNo= ' + edtVNoJV.Text  + ' AND TNo=2';
+    DM.CallSQL2(sql);
+
+    //=======calculation for CR
+    sql := '';
+    sql := 'Update ' + iCYVData + ' Set VDate = ' + QuotedStr(dtp) + ', VDType= ' + QuotedStr('TRAN') + ', VType= ' + QuotedStr('CR') + ', VNo= ' + edtVNoCR.Text + ', ACode=' + QuotedStr(mCHCode) + ', RCode=' + QuotedStr(mCHCode) + ', VDesc=' + QuotedStr('Posted for Bill # ' + cboSPID.Text) + ', Payee=' + QuotedStr(mPayee) + ', BillNo=' + QuotedStr(cboSPID.Text)+ ', BillDate=' + QuotedStr(dtp)+ ', ChqNo=' + QuotedStr(edtChqNo.Text) + ', ChqDate=' + QuotedStr(dtpChq) + ', CompID=' + QuotedStr('01') + ', SectID=' + QuotedStr('01') + ', DeptID=' + QuotedStr('01') + ', Debit=' + edtAdvC.Text + ' , Credit=0, UserID=' + QuotedStr(iUserID) + ', EntryDT=' + QuotedStr(mEntryDT) + ', IsConf=' + QuotedStr('T') + ' where VType = ' + QuotedStr('CR') + '  AND VNo= ' + edtVNoCR.Text  + ' AND TNo=1';
+    DM.CallSQL2(sql);
+
+    sql := '';
+    sql := 'Update ' + iCYVData + ' Set VDate = ' + QuotedStr(dtp) + ', VDType= ' + QuotedStr('TRAN') + ', VType= ' + QuotedStr('CR') + ', VNo= ' + edtVNoCR.Text + ', ACode=' + QuotedStr(mSLCode) + ', RCode=' + QuotedStr(mCHCode) + ', VDesc=' + QuotedStr('Posted for Bill # ' + cboSPID.Text) + ', Payee=' + QuotedStr(mPayee) + ', BillNo=' + QuotedStr(cboSPID.Text)+ ', BillDate=' + QuotedStr(dtp)+ ', ChqNo=' + QuotedStr(edtChqNo.Text) + ', ChqDate=' + QuotedStr(dtpChq) + ', CompID=' + QuotedStr('01') + ', SectID=' + QuotedStr('01') + ', DeptID=' + QuotedStr('01') + ', Debit=0, Credit=' + edtAdvC.Text + ' , UserID=' + QuotedStr(iUserID) + ', EntryDT=' + QuotedStr(mEntryDT) + ', IsConf=' + QuotedStr('T') + ' where VType = ' + QuotedStr('CR') + '  AND VNo= ' + edtVNoCR.Text  + ' AND TNo=2';
+    DM.CallSQL2(sql);
+
+    //========calculation for BR:
+    sql := '';
+    sql := 'Update ' + iCYVData + ' Set VDate = ' + QuotedStr(dtp) + ', VDType= ' + QuotedStr('TRAN') + ', VType= ' + QuotedStr('BR') + ', VNo= ' + edtVNoBR.Text + ', ACode=' + QuotedStr(mCBCode) + ', RCode=' + QuotedStr(mCBCode) + ', VDesc=' + QuotedStr('Posted for Bill # ' + cboSPID.Text) + ', Payee=' + QuotedStr(mPayee) + ', BillNo=' + QuotedStr(cboSPID.Text)+ ', BillDate=' + QuotedStr(dtp)+ ', ChqNo=' + QuotedStr(edtChqNo.Text) + ', ChqDate=' + QuotedStr(dtpChq) + ', CompID=' + QuotedStr('01') + ', SectID=' + QuotedStr('01') + ', DeptID=' + QuotedStr('01') + ', Debit=' + edtAdvB.Text + ', Credit=0, UserID=' + QuotedStr(iUserID) + ', EntryDT=' + QuotedStr(mEntryDT) + ', IsConf=' + QuotedStr('T') + ' where VType = ' + QuotedStr('BR') + '  AND VNo= ' + edtVNoBR.Text  + ' AND TNo=1';
+    DM.CallSQL2(sql);
+
+    sql := '';
+    sql := 'Update ' + iCYVData + ' Set VDate = ' + QuotedStr(dtp) + ', VDType= ' + QuotedStr('TRAN') + ', VType= ' + QuotedStr('BR') + ', VNo= ' + edtVNoBR.Text + ', ACode=' + QuotedStr(mSLCode) + ', RCode=' + QuotedStr(mCBCode) + ', VDesc=' + QuotedStr('Posted for Bill # ' + cboSPID.Text) + ', Payee=' + QuotedStr(mPayee) + ', BillNo=' + QuotedStr(cboSPID.Text)+ ', BillDate=' + QuotedStr(dtp)+ ', ChqNo=' + QuotedStr(edtChqNo.Text) + ', ChqDate=' + QuotedStr(dtpChq) + ', CompID=' + QuotedStr('01') + ', SectID=' + QuotedStr('01') + ', DeptID=' + QuotedStr('01') + ', Debit=0, Credit=' + edtAdvB.Text + ', UserID=' + QuotedStr(iUserID) + ', EntryDT=' + QuotedStr(mEntryDT) + ', IsConf=' + QuotedStr('T') + ' where VType = ' + QuotedStr('BR') + '  AND VNo= ' + edtVNoBR.Text  + ' AND TNo=2';
+    DM.CallSQL2(sql);
+    ShowMessage('Voucher Updated Successfully');
+  end;
+  DM.cboAdd(cboSPID,'Select SPID From SP Where SPType = ' + IntToStr(mSPType) + ' Order By SPID Desc');
+end;
+
+
+procedure TfrmTrans.btnClearClick(Sender: TObject);
+begin
+  sql := '';
+  sql := 'Delete from SPTDetail Where ItemID = ' + QuotedStr(edtItemID.Text) + ' And TNo = ' + tblSPTDetailTNo.AsString;
+  DM.CallSQL2(sql);
+  tblSPTDetail.Close;
+  tblSPTDetail.Open;
+  DM.CallSQL1('Select IsNull(Sum(Total),0) from SPTDetail');
+  lblGross.Caption := FloatToStr(DM.qryFR1.Fields[0].AsFloat);
+  lblNet.Caption := FloatToStr(StrToFloat(lblGross.Caption) - StrToFloat(edtAdvC.Text) - StrToFloat(edtAdvB.Text) - StrToFloat(edtDiscA.Text) + StrToFloat(edtVATA.Text) + StrToFloat(edtSChargeA.Text));
+  btnUpdate.Enabled := False;
+  btnClear.Enabled := False;
+  btnClearAll.Enabled := False;
+
+
+end;
+
+procedure TfrmTrans.FormCreate(Sender: TObject);
+var
+KBIni : Tinifile;
+begin
+  KBini := TIniFile.Create(ExtractFilePath(Application.ExeName) + 'KBR.ini');
+  if not assigned(frmEmp) then frmEmp := TfrmEmp.Create(Application);
+  DM.cboAdd(cboSLCode,'Select AHead + ' + QuotedStr(' - ') + ' + ACode From COA Where ADType=' + QuotedStr('SL') + ' AND ALevel = ' + IntToStr(iCOALevel) + ' Order by AHead');
+  DM.cboAdd(cboCHCode,'Select AHead + ' + QuotedStr(' - ') + ' + ACode From COA Where ADType=' + QuotedStr('CH') + ' AND ALevel = ' + IntToStr(iCOALevel) + ' Order by AHead');
+  DM.cboAdd(cboCBCode,'Select AHead + ' + QuotedStr(' - ') + ' + ACode From COA Where ADType=' + QuotedStr('CB') + ' AND ALevel = ' + IntToStr(iCOALevel) + ' Order by AHead');
+  DM.cboAdd(cboCNCode,'Select AHead + ' + QuotedStr(' - ') + ' + ACode From COA Where ADType=' + QuotedStr('AR') + ' AND ALevel = ' + IntToStr(iCOALevel) + ' Order by AHead');
+  DM.cboAdd(cboSPBy,'Select EmpName + ' + QuotedStr(' - ') + ' + EmpID From Employee Order by EmpName');
+  DM.cboAdd(cboEmpName,'Select EmpName + ' + QuotedStr(' - ') + ' + EmpID From Employee Order by EmpName');
+  if Length(edtMtr.Text) < 1 then edtMtr.Text := '0';
+  if Length(edtSqIn.Text) < 1 then edtSqIn.Text := '0';
+ // if Length(edtSQty.Text) < 1 then edtPQty.Text := '0';
+  if Length(edtPQty.Text) < 1 then edtPQty.Text := '0';
+  edtPQty.Text := FloatToStr(StrToFloat(edtR.Text) * StrToFloat(edtMtr.Text) * StrToFloat(edtSqIn.Text));
+  tblSPTDetail.Close;
+  tblSPTDetail.Open;
+end;
+
+procedure TfrmTrans.LMDShapeButton1Click(Sender: TObject);
+begin
+  Close;
+end;
+
+procedure TfrmTrans.btnNextClick(Sender: TObject);
+begin
+  if StrToFloat(edtSQty.Text) > 0 then
+  begin
+    sqt := StrToFloat(edtSQty.Text);
+    spr := StrToFloat(edtSPrice.Text);
+    spttl := sqt * spr;
+    //spttl := spttl - StrToFloat(edtDisc.Text) * spttl / 100;
+    spttl := spttl - StrToFloat(edtDisc.Text);
+    pqt := 0;
+    ppr := 0;
+  end
+  else if StrToFloat(edtPQty.Text) > 0 then
+  begin
+    pqt := StrToFloat(edtPQty.Text);
+    ppr := StrToFloat(edtPPrice.Text);
+    spttl := pqt * ppr;
+    //spttl := spttl - StrToFloat(edtDisc.Text) * spttl / 100;
+    spttl := spttl - StrToFloat(edtDisc.Text);
+    sqt := 0;
+    spr := 0;
+  end;
+  DM.CallSQL1('Select IsNull(Max(TNo),0) from SPTDetail');
+  mTNo := (DM.qryFR1.Fields[0].AsInteger) + 1;
+  with sp_SPTDetail do
+  begin
+    ParamByName('@SPType').AsInteger := mSPType;
+    ParamByName('@SPID').AsString := cboSPID.Text;
+    ParamByName('@ItemID').AsString := edtItemID.Text;
+    ParamByName('@IName').AsString := edtIName.Text;
+    ParamByName('@EmpID').AsString := Copy(cboEmpName.Text,Length(cboEmpName.Text) - 5,Length(cboEmpName.Text));
+    ParamByName('@UOMID').AsString := cboUOM.Text;
+    ParamByName('@TNo').AsInteger := mTNo;
+    ParamByName('@SQty').AsFloat := sqt;
+    ParamByName('@SPrice').AsFloat := spr;
+    ParamByName('@PQty').AsFloat := pqt;
+    ParamByName('@PPrice').AsFloat := ppr;;
+    ParamByName('@IDiscP').AsFloat := StrToFloat(edtDisc.Text);
+    ParamByName('@Total').AsFloat := spttl;
+    ExecProc;
+  end;
+  tblSPTDetail.Close;
+  tblSPTDetail.Open;
+  btnSave.Enabled := True;
+  DM.CallSQL1('Select IsNull(Sum(Total),0) from SPTDetail');
+  lblGross.Caption := FloatToStr(DM.qryFR1.Fields[0].AsFloat);
+  lblNet.Caption := FloatToStr(StrToFloat(lblGross.Caption) - StrToFloat(edtAdvC.Text) - StrToFloat(edtAdvB.Text) - StrToFloat(edtDiscA.Text) + StrToFloat(edtVATA.Text) + StrToFloat(edtSChargeA.Text));
+  cboEmpName.Text := '';
+
+//  if Length(edtTotal.Text) < 1 then edtTotal.Text := '0';
+ // sql := 'select Isnull(max(VNo),0) + 1 from ' + iCYVData;
+//  DM.CallSQL1(sql);
+
+
+
+ // ' + QuotedStr(Copy(cboCNCode.Text,Length(cboCNCode.Text) - 10,Length(cboCNCode.Text)));
+ end;
+
+procedure TfrmTrans.CalTotal;
+var
+ttl : Double;
+begin
+  if Length(edtSQty.Text) < 1 then edtSQty.Text := '0';
+  if Length(edtSPrice.Text) < 1 then edtSPrice.Text := '0';
+  if Length(edtPQty.Text) < 1 then edtPQty.Text := '0';
+  if Length(edtPPrice.Text) < 1 then edtPPrice.Text := '0';
+  if Length(edtDisc.Text) < 1 then edtDisc.Text := '0';
+
+  if (StrToFloat(edtSQty.Text) > 0) then ttl := StrToFloat(edtSQty.Text) * StrToFloat(edtSPrice.Text) else ttl := StrToFloat(edtPQty.Text) * StrToFloat(edtPPrice.Text);
+  //ttl := ttl - StrToFloat(edtDisc.Text) * ttl / 100;
+  ttl := ttl - StrToFloat(edtDisc.Text);
+  edtTotal.Text := FloatToStr(ttl);
+end;
+
+
+procedure TfrmTrans.edtSQtyChange(Sender: TObject);
+begin
+  CalTotal;
+end;
+
+procedure TfrmTrans.edtPPriceChange(Sender: TObject);
+begin
+  CalTotal;
+//edtSPrice.text:= FloatToStr(StrToFloat(edtTotal.Text) / StrToFloat(edtSQty.Text));
+end;
+
+{procedure TfrmTrans.edtSPriceChange(Sender: TObject);
+begin
+  CalTotal;
+  edtSPrice.text := FloatToStr(StrToFloat(edtTotal.Text) / StrToFloat(edtSQty.Text));
+end; }
+
+procedure TfrmTrans.edtDiscChange(Sender: TObject);
+begin
+  CalTotal;
+end;
+
+procedure TfrmTrans.edtTotalChange(Sender: TObject);
+begin
+//  CalTotal;
+end;
+
+procedure TfrmTrans.edtAdvCChange(Sender: TObject);
+begin
+  if Length(edtAdvC.Text) < 1 then edtAdvC.Text := '0';
+  lblNet.Caption := FloatToStr(StrToFloat(lblGross.Caption) - StrToFloat(edtAdvC.Text) - StrToFloat(edtAdvB.Text) - StrToFloat(edtDiscA.Text) + StrToFloat(edtVATA.Text) + StrToFloat(edtSChargeA.Text));
+end;
+
+{procedure TfrmTrans.btnPostClick(Sender: TObject);
+var
+vno,Ln : integer;
+//mDr,mCr : Double;
+sql, dtp,mDCode,mCCode,mVNo,mVNoJV,mVNoBR,mVNoCR,mVDesc,mPayee,mEntryDT,mSLCode,mCHCode,mCBCode,mCNCode,edtAdv  : string;
+   begin
+  dtp := FormatDateTime('mm/dd/yyyy', dtpSPDate.Date);
+  if iCOALevel = 4 then Ln := 7 else Ln := 10;
+  Ln := Ln - 1;
+  mSLCode := Copy(cboSLCode.Text,Length(cboSLCode.Text) - Ln,Length(cboSLCode.Text));
+  mChCode := Copy(cbochCode.Text,Length(cbochCode.Text) - Ln,Length(cbochCode.Text));
+  mCBCode := Copy(cboCBCode.Text,Length(cboCBCode.Text) - Ln,Length(cboCBCode.Text));
+  mCNCode := Copy(cboCNCode.Text,Length(cboCNCode.Text) - Ln,Length(cboCNCode.Text));
+  mVDesc := '#BR Posted from Inventory.';
+  mPayee := Copy(cboCNCode.Text,1,Length(cboCNCode.Text) - 8);
+  mEntryDT := DateToStr(Date) + ' / ' + TimeToStr(Time);
+//==== Juornal Voucher
+    sql := 'select Isnull(max(VNo),0) + 1 from ' + iCYVData + ' Where VType=' + QuotedStr('JV');
+    //    else sql := 'select Isnull(max(VNo),0) + 1 from ' + iCYVData;
+    DM.CallSQL1(sql);
+    edtVNoJV.Text := DM.qryFR1.Fields[0].AsString;
+    sql := '';
+    sql := 'Insert Into ' + iCYVData + '(VDate,VType,VNo,TNo,ACode,VDesc,JobID,Debit,Credit,Payee,UserID,EntryDT,IsConf) Values (';
+    sql := sql + QuotedStr(dtp) + ', ' + QuotedStr('JV') + ', ' + edtVNoJV.Text + ', ' + '1' + ', ' + QuotedStr(mCNCode) + ', ' + QuotedStr('#JV Posted from Inventory.') + ', ' + QuotedStr('000000') + ', ' + lblGTotal.Caption + ', ' + '0' + ', ' + QuotedStr(mPayee) + ',' + QuotedStr(iUserID) + ', ' + QuotedStr(mEntryDT) + ', ' + QuotedStr('F') + ')';
+    DM.CallSQL2(sql);
+    sql := '';
+    sql := 'Insert Into ' + iCYVData + '(VDate,VType,VNo,TNo,ACode,VDesc,JobID,Debit,Credit,Payee,UserID,EntryDT,IsConf) Values (';
+    sql := sql + QuotedStr(dtp) + ', ' + QuotedStr('JV') + ', ' + edtVNoJV.Text + ', ' + '2' + ', ' + QuotedStr(mSLCode) + ', ' + QuotedStr('#JV Posted from Inventory.') + ', ' + QuotedStr('000000') + ', ' + '0' + ', ' + lblGTotal.Caption + ', ' + QuotedStr(mPayee) + ',' + QuotedStr(iUserID) + ', ' + QuotedStr(mEntryDT) + ', ' + QuotedStr('F') + ')';
+    DM.CallSQL2(sql);
+
+//calculation for CR
+  sql := '';
+  sql := 'select Isnull(max(VNo),0) + 1 from ' + iCYVData + ' Where VType=' + QuotedStr('CR');
+  DM.CallSQL1(sql);
+  edtVNoCR.Text := DM.qryFR1.Fields[0].AsString;
+  sql := '';
+  sql := 'Insert Into ' + iCYVData + '(VDate,VType,VNo,TNo,ACode,VDesc,JobID,Debit,Credit,Payee,UserID,EntryDT,IsConf) Values (';
+  sql := sql + QuotedStr(dtp) + ', ' + QuotedStr('CR') + ', ' + edtVNoCR.Text + ', ' + '1' + ', ' + QuotedStr(mChCode) + ', ' + QuotedStr(mVDesc) + ', ' + QuotedStr('000000') + ', ' + lblGTotal.Caption + ', ' + '0' + ', ' + QuotedStr(mPayee) + ', ' + QuotedStr(iUserID) + ', ' + QuotedStr(mEntryDT) + ',' + QuotedStr('F') + ')';
+  DM.CallSQL2(sql);
+  sql := '';
+  sql := 'Insert Into ' + iCYVData + '(VDate,VType,VNo,TNo,ACode,VDesc,JobID,Debit,Credit,Payee,UserID,EntryDT,IsConf) Values (';
+  sql := sql + QuotedStr(dtp) + ', ' + QuotedStr('CR') + ', ' + edtVNoCR.Text + ', ' + '2' + ', ' + QuotedStr(mSLCode) + ', ' + QuotedStr(mVDesc) + ', ' + QuotedStr('000000') + ', ' + '0' + ', ' + lblGTotal.Caption + ', ' + QuotedStr(mPayee) + ', ' + QuotedStr(iUserID) + ', ' + QuotedStr(mEntryDT) + ', ' + QuotedStr('F') + ')';
+  DM.CallSQL2(sql);
+
+//calculation for BR:
+  sql := 'select Isnull(max(VNo),0) + 1 from ' + iCYVData + ' Where VType=' + QuotedStr('BR');
+  DM.CallSQL1(sql);
+  edtVNoBR.Text := DM.qryFR1.Fields[0].AsString;
+
+  sql := '';
+  sql := 'Insert Into ' + iCYVData + '(VDate,VType,VNo,TNo,ACode,VDesc,JobID,Debit,Credit,Payee,UserID,EntryDT,IsConf) Values (';
+  sql := sql + QuotedStr(dtp) + ', ' + QuotedStr('BR') + ', ' + edtVNoBR.Text + ', ' + '1' + ', ' + QuotedStr(mCBCode) + ', ' + QuotedStr(mVDesc) + ', ' + QuotedStr('000000') + ', ' + lblGTotal.Caption + ', ' + '0' + ', ' + QuotedStr(mPayee) + ', ' + QuotedStr(iUserID) + ', ' + QuotedStr(mEntryDT) + ',' + QuotedStr('F') + ')';
+  DM.CallSQL2(sql);
+
+  sql := '';
+  sql := 'Insert Into ' + iCYVData + '(VDate,VType,VNo,TNo,ACode,VDesc,JobID,Debit,Credit,Payee,UserID,EntryDT,IsConf) Values (';
+  sql := sql + QuotedStr(dtp) + ', ' + QuotedStr('BR') + ', ' + edtVNoBR.Text + ', ' + '2' + ', ' + QuotedStr(mSLCode) + ', ' + QuotedStr(mVDesc) + ', ' + QuotedStr('000000') + ', ' + '0' + ', ' + lblGTotal.Caption + ', ' + QuotedStr(mPayee) + ', ' + QuotedStr(iUserID) + ', ' + QuotedStr(mEntryDT) + ', ' + QuotedStr('F') + ')';
+  DM.CallSQL2(sql);
+  ShowMessage('Voucher Posted Successfully');
+  btnPost.Enabled := False;
+end; }
+
+procedure TfrmTrans.btnITSelectClick(Sender: TObject);
+begin
+  inherited;
+    if not assigned(frmITSelect) then frmITSelect:= TfrmITSelect.Create(Application);
+    if frmITSelect.ShowModalItem = mrOk then
+    begin
+      edtItemID.Text := frmITSelect.QryItemItemID.AsString;
+      edtIName.Text := frmITSelect.QryItemIName.AsString;
+      //edtIName.Text := frmITSelect.QryItemOutputName.AsString;
+      cboUOM.Text := frmITSelect.QryItemuomid.AsString;
+    end;
+    cboEmpName.SetFocus;
+    //if edtSQty.Enabled = True then edtSQty.SetFocus else edtPQty.SetFocus;
+end;
+
+procedure TfrmTrans.DBGrid1DblClick(Sender: TObject);
+begin
+  edtItemID.Text := tblSPTDetailITEMID.AsString;
+  edtIName.Text := tblSPTDetailIName.AsString;
+  cboEmpName.Text := tblSPTDetailEmpName.AsString + ' - ' + tblSPTDetailEmpID.AsString;
+  cboUOM.Text := tblSPTDetailUOMID.AsString;
+  //if (mSPType = 1) then (edtQty.Text := tblSPTDetailIssQty.AsString) else (edtQty.Text := tblSPTDetailRecQty.AsString);
+  edtSQty.Text := tblSPTDetailSQty.AsString;
+  edtSPrice.Text := tblSPTDetailSPrice.AsString;
+  edtPQty.Text := tblSPTDetailPQty.AsString;
+  edtPPrice.Text := tblSPTDetailPPrice.AsString;
+  edtDisc.Text := tblSPTDetailIDiscP.AsString;
+  edtTotal.Text := tblSPTDetailTotal.AsString;
+  btnUpdate.Enabled := True;
+  btnClear.Enabled := True;
+  btnClearAll.Enabled := True;
+end;
+
+procedure TfrmTrans.btnUpdateClick(Sender: TObject);
+begin
+  if StrToFloat(edtSQty.Text) > 0 then
+  begin
+    sqt := StrToFloat(edtSQty.Text);
+    spr := StrToFloat(edtSPrice.Text);
+    spttl := sqt * spr;
+    //spttl := spttl - StrToFloat(edtDisc.Text) * spttl / 100;
+    spttl := spttl - StrToFloat(edtDisc.Text);
+    pqt := 0;
+    ppr := 0;
+  end
+  else if StrToFloat(edtPQty.Text) > 0 then
+  begin
+    pqt := StrToFloat(edtPQty.Text);
+    ppr := StrToFloat(edtPPrice.Text);
+    spttl := pqt * ppr;
+    //spttl := spttl - StrToFloat(edtDisc.Text) * spttl / 100;
+    spttl := spttl - StrToFloat(edtDisc.Text);
+    sqt := 0;
+    spr := 0;
+  end;
+  sql := '';
+  //sql := 'Update SPTDetail set ItemID = ' + QuotedStr(edtItemID.Text) + ',IName=' + QuotedStr(edtIName.Text) + ',UOMID=' + QuotedStr(cboUOM.Text) + ',IssQty=' + FloatToStr(iqty) + ',RecQty = ' + FloatToStr(rqty) + ',Price=' + edtPrice.Text + ',IDiscP = ' + edtDisc.Text + ',Total=' + edtTotal.Text + ' Where ItemID = ' + QuotedStr(edtItemID.Text) + ' And TNo = ' + tblSPTDetailTNo.AsString;
+  sql := 'Update SPTDetail set ItemID = ' + QuotedStr(edtItemID.Text) + ',IName=' + QuotedStr(edtIName.Text) + ',EmpID=' + QuotedStr(Copy(cboEmpName.Text,Length(cboEmpName.Text) - 5,Length(cboEmpName.Text))) + ',UOMID=' + QuotedStr(cboUOM.Text) + ',SQty=' + FloatToStr(sqt) + ',SPrice = ' + FloatToStr(spr) + ',PQty = ' + FloatToStr(pqt) + ',PPrice=' + FloatToStr(ppr) + ',IDiscP = ' + edtDisc.Text + ',Total=' + FloatToStr(spttl) + ' Where ItemID = ' + QuotedStr(edtItemID.Text) + ' And TNo = ' + tblSPTDetailTNo.AsString;
+  DM.CallSQL2(sql);
+  tblSPTDetail.Close;
+  tblSPTDetail.Open;
+  DM.CallSQL1('Select IsNull(Sum(Total),0) from SPTDetail');
+  lblGross.Caption := FloatToStr(DM.qryFR1.Fields[0].AsFloat);
+  lblNet.Caption := FloatToStr(StrToFloat(lblGross.Caption) - StrToFloat(edtAdvC.Text) - StrToFloat(edtAdvB.Text) - StrToFloat(edtDiscA.Text) + StrToFloat(edtVATA.Text) + StrToFloat(edtSChargeA.Text));
+//  btnUpdate.Enabled := False;
+//  btnClear.Enabled := False;
+//  btnClearAll.Enabled := False;
+end;
+
+procedure TfrmTrans.btnClearAllClick(Sender: TObject);
+begin
+  DM.CallSQL2('Delete from SPTDetail');
+  tblSPTDetail.Close;
+  tblSPTDetail.Open;
+  lblGross.Caption := '0';
+  lblNet.Caption := '0';
+  btnUpdate.Enabled := False;
+  btnClear.Enabled := False;
+  btnClearAll.Enabled := False;
+end;
+
+procedure TfrmTrans.cboSPIDClick(Sender: TObject);
+begin
+  QryType := 2;
+  sql := '';
+  sql := 'Select SPDate,SPBy,ACode,SectID,DeptID,ReqID,ReqDate,VNoJV, VNoCR, VNoBR, AdvC, AdvB  from SP where SPID = ' + QuotedStr(cboSPID.Text);
+  DM.CallSQL1(sql);
+  dtpSPDate.DateTime := DM.qryFR1.Fields[0].AsDateTime;
+  cboSPBy.Text := DM.qryFR1.Fields[1].AsString;
+  cboCNCode.Text := DM.qryFR1.Fields[2].AsString;
+  cboSectName.Text := DM.qryFR1.Fields[3].AsString;
+  cboDeptName.Text := DM.qryFR1.Fields[4].AsString;
+  cboReqID.Text := DM.qryFR1.Fields[5].AsString;
+  dtpReqDate.DateTime := DM.qryFR1.Fields[6].AsDateTime;
+  edtVNoJV.Text := DM.qryFR1.Fields[7].AsString;
+  edtVNoCR.Text := DM.qryFR1.Fields[8].AsString;
+  edtVNoBR.Text := DM.qryFR1.Fields[9].AsString;
+  edtAdvC.Text := DM.qryFR1.Fields[10].AsString;
+  edtAdvB.Text := DM.qryFR1.Fields[11].AsString;
+  sql := '';
+  sql := 'Select EmpName,EmpID from Employee where EmpID = ' + QuotedStr(cboSPBy.Text);
+  DM.CallSQL1(sql);
+  cboSPBy.Text := (DM.qryFR1.Fields[0].AsString) + ' - ' + (DM.qryFR1.Fields[1].AsString);
+
+  sql := '';
+  sql := 'Select AHead,ACode,Addr from COA where ACode = ' + QuotedStr(cboCNCode.Text);
+//  sql := 'Select ContName,ContID,Addr from Contact where ContID = ' + QuotedStr(cboContName.Text);
+  DM.CallSQL1(sql);
+ // cboCNCode.Text := (DM.qryFR1.Fields[0].AsString);
+  cboCNCode.Text := (DM.qryFR1.Fields[0].AsString) + ' - ' + (DM.qryFR1.Fields[1].AsString);
+  edtBAddr.Text := DM.qryFR1.Fields[2].AsString;
+//************************************
+  DM.CallSQL2('Delete from SPTDetail');
+  sql := '';
+  sql := 'Insert into SPTDetail Select * from SPDetail where SPID = ' + QuotedStr(cboSPID.Text);
+  DM.CallSQL2(sql);
+  tblSPTDetail.Close;
+  tblSPTDetail.Open;
+  btnSave.Enabled := True;
+  DM.CallSQL1('Select IsNull(Sum(Total),0) from SPTDetail');
+  lblGross.Caption := FloatToStr(DM.qryFR1.Fields[0].AsFloat);
+  lblNet.Caption := FloatToStr(StrToFloat(lblGross.Caption) - StrToFloat(edtAdvC.Text) - StrToFloat(edtAdvB.Text) - StrToFloat(edtDiscA.Text) + StrToFloat(edtVATA.Text) + StrToFloat(edtSChargeA.Text));
+end;
+
+procedure TfrmTrans.cboSPIDKeyPress(Sender: TObject; var Key: Char);
+begin
+  if Key = #13 then dtpSPDate.SetFocus;
+end;
+
+procedure TfrmTrans.dtpSPDateKeyPress(Sender: TObject; var Key: Char);
+begin
+  if Key = #13 then cboSPBy.SetFocus;
+end;
+
+procedure TfrmTrans.cboSPByKeyPress(Sender: TObject; var Key: Char);
+begin
+  if Key = #13 then cboCNCode.SetFocus;
+end;
+
+procedure TfrmTrans.cboCNCodeKeyPress(Sender: TObject; var Key: Char);
+begin
+  if Key = #13 then cboSectName.SetFocus;
+end;
+
+procedure TfrmTrans.cboSectNameKeyPress(Sender: TObject; var Key: Char);
+begin
+  if Key = #13 then cboDeptName.SetFocus;
+end;
+
+procedure TfrmTrans.cboDeptNameKeyPress(Sender: TObject; var Key: Char);
+begin
+  if Key = #13 then cboReqID.SetFocus;
+end;
+
+procedure TfrmTrans.cboReqIDKeyPress(Sender: TObject; var Key: Char);
+begin
+  if Key = #13 then dtpReqDate.SetFocus;
+end;
+
+procedure TfrmTrans.dtpReqDateKeyPress(Sender: TObject; var Key: Char);
+begin
+  if Key = #13 then btnITSelect.SetFocus;
+end;
+
+procedure TfrmTrans.cboUOMKeyPress(Sender: TObject; var Key: Char);
+begin
+  if Key = #13 then
+  begin
+    //if edtSQty.Enabled = True then edtSQty.SetFocus else edtPQty.SetFocus;
+    if edtSQty.Enabled = True then edtW.SetFocus else edtR.SetFocus;
+  end;
+end;
+
+procedure TfrmTrans.edtDiscKeyPress(Sender: TObject; var Key: Char);
+begin
+  if Key = #13 then edtTotal.SetFocus;
+  {begin
+    if btnUpdate.Enabled = True then btnUpdate.SetFocus else btnNext.SetFocus;
+  end; }
+end;
+
+procedure TfrmTrans.edtSQtyKeyPress(Sender: TObject; var Key: Char);
+begin
+  if Key = #13 then edtSPrice.SetFocus;
+end;
+
+procedure TfrmTrans.edtPQtyKeyPress(Sender: TObject; var Key: Char);
+begin
+  if Key = #13 then edtPPrice.SetFocus;
+end;
+
+procedure TfrmTrans.edtSPriceKeyPress(Sender: TObject; var Key: Char);
+begin
+  if Key = #13 then edtDisc.SetFocus;
+end;
+
+procedure TfrmTrans.edtPPriceKeyPress(Sender: TObject; var Key: Char);
+begin
+  if Key = #13 then edtDisc.SetFocus;
+end;
+
+procedure TfrmTrans.edtPQtyChange(Sender: TObject);
+begin
+  CalTotal;
+end;
+
+procedure TfrmTrans.btnInvoiceClick(Sender: TObject);
+var
+//Bill : TrptRBillLabelTex;
+Bill : TrptRBill;
+begin
+  Bill := TrptRBill.Create(Application);
+  sql := '';
+  sql := 'Select * From V_SP where SPID = ' + QuotedStr(cboSPID.Text) + ' Order By TNo';
+  Bill.qryInv.SQL.Add(sql);
+  Bill.qryInv.Close;
+  Bill.qryInv.Open;
+  Bill.lblCompany.Caption := iCompany;
+  Bill.lblAddr1.Caption := iAddress1;
+  Bill.lblAddr2.Caption := iAddress2;
+  Bill.lblContName.Caption := Copy(cboCNCode.Text,1,Length(cboCNCode.Text) - 11);
+  Bill.lblAddress.Caption := edtBAddr.Text;
+  Bill.lblBillID.Caption := cboSPID.Text;
+  Bill.lblBillDate.Caption := DateToStr(dtpSPDate.Date);
+ // Bill.lblChallanID.Caption := Copy(lblChalID.Text,1,Length(lblChalID.Text) - 4);
+ // Bill.lblChallanDate.Caption := Copy(lblChalDate.Text,1,Length(lblChalDate.Text) - 1);
+//  Bill.lblWORID.Caption := cboWORID.Text;
+//  Bill.lblWORDate.Caption := dateToStr(dtpWORDate.DateTime);
+  Bill.lblTIW.Caption := edtTIW.Text;    //DateToStr(dtpWORDate.Date);
+  Bill.lblGross.Caption := FormatFloat('##,##,##,###.00',StrToFloat(lblGross.Caption));    //DateToStr(dtpWORDate.Date);
+  Bill.lblVATCap.Caption := edtVATP.Text + ' (%) VAT :';
+  Bill.lblDiscCap.Caption := edtDiscP.Text + ' (%) Disc. :';
+//Bill.lblPDate.Caption := 'Print Date : ' + DateToStr(Date) + ' \ ' + TimeToStr(Time) ;
+ Bill.lblVATA.Caption := FormatFloat('##,##,##,###.00',StrToFloat(edtVATA.Text));
+ Bill.lblDiscA.Caption := FormatFloat('##,##,##,###.00',StrToFloat(edtDiscA.Text));
+ Bill.lblSChargeA.Caption := FormatFloat('##,##,##,###.00',StrToFloat(edtSChargeA.Text));
+ Bill.lblAdvC.Caption := FormatFloat('##,##,##,###.00',StrToFloat(edtAdvC.Text));
+ Bill.lblAdvB.Caption := FormatFloat('##,##,##,###.00',StrToFloat(edtAdvB.Text));
+ Bill.lblNet.Caption := FormatFloat('##,##,##,###.00',StrToFloat(lblNet.Caption));
+ if StrToFloat(edtDiscA.Text) > 0 then
+  begin
+    Bill.lblDiscCap.Font.Color := clBlack;
+    Bill.lblDiscA.Font.Color := clBlack;
+  end
+  else
+  begin
+    Bill.lblDiscCap.Font.Color := clWhite;
+    Bill.lblDiscA.Font.Color := clWhite;
+  end;
+
+ if StrToFloat(edtVatA.Text) > 0 then
+  begin
+    Bill.lblVATCap.Font.Color := clBlack;
+    Bill.lblVATA.Font.Color := clBlack;
+  end
+  else
+  begin
+    Bill.lblVATCap.Font.Color := clWhite;
+    Bill.lblVATA.Font.Color := clWhite;
+  end;
+  Bill.QRep.Preview;
+end;
+
+procedure TfrmTrans.cboEmpNameKeyPress(Sender: TObject; var Key: Char);
+begin
+  if Key = #13 then cboUOM.SetFocus;
+end;
+
+procedure TfrmTrans.edtWKeyPress(Sender: TObject; var Key: Char);
+begin
+  if Key = #13 then edtL.SetFocus;
+end;
+
+procedure TfrmTrans.edtLKeyPress(Sender: TObject; var Key: Char);
+begin
+  if Key = #13 then edtQty.SetFocus;
+ { begin
+    if edtSQty.Enabled = True then edtSQty.SetFocus else edtPQty.SetFocus;
+    edtSQty.SetFocus;
+ end;}
+end;
+
+procedure TfrmTrans.edtWChange(Sender: TObject);
+begin
+  if Length(edtW.Text) < 1 then edtW.Text := '0';
+  if Length(edtL.Text) < 1 then edtL.Text := '0';
+  if Length(edtQty.Text) < 1 then edtQty.Text := '0';
+  if Length(edtSQty.Text) < 1 then edtSQty.Text := '0';
+  edtSQty.Text := FloatToStr(StrToFloat(edtW.Text) * StrToFloat(edtL.Text)* StrToFloat(edtQty.Text));
+end;
+
+procedure TfrmTrans.edtLChange(Sender: TObject);
+begin
+  if Length(edtW.Text) < 1 then edtW.Text := '0';
+  if Length(edtL.Text) < 1 then edtL.Text := '0';
+  if Length(edtQty.Text) < 1 then edtQty.Text := '0';
+  if Length(edtSQty.Text) < 1 then edtSQty.Text := '0';
+  edtSQty.Text := FloatToStr(StrToFloat(edtW.Text) * StrToFloat(edtL.Text)* StrToFloat(edtQty.Text));
+end;
+
+procedure TfrmTrans.btnMRClick(Sender: TObject);
+var
+mr : TrptMR;
+begin
+  sql := '';
+  sql := 'Select * from V_SP where SPID = ' + QuotedStr(cboSPID.Text);
+  mr := TrptMR.Create(Application);
+  mr.lblCompany.Caption := iCompany;
+  mr.lblAddr1.Caption := iAddress1;
+  mr.lblAddr2.Caption := iAddress2;
+
+  mr.lblSPID.Caption := cboSPID.Text;
+  mr.lblContName.Caption := Copy(cboCNCode.Text,1,Length(cboCNCode.Text) - 8);
+  mr.lblDate.Caption := DateToStr(dtpSPDate.Date);
+  mr.lblAmount.Caption := FormatFloat('##,##,##,###.00',StrToFloat(lblNet.Caption));
+  mr.lblTIW.Caption := '(Tk. ' + edtTIW.Text + ' only)';
+  mr.qryInv.SQL.Clear;
+  mr.qryInv.SQL.Add(sql);
+  mr.qryInv.Close;
+  mr.qryInv.Open;
+  mr.QRep.Preview;
+end;
+
+procedure TfrmTrans.edtMtrChange(Sender: TObject);
+begin
+  if Length(edtR.Text) < 1 then edtR.Text := '0';
+  if Length(edtMtr.Text) < 1 then edtMtr.Text := '0';
+  if Length(edtSqIn.Text) < 1 then edtSqIn.Text := '0';
+  if Length(edtPQty.Text) < 1 then edtPQty.Text := '0';
+  edtPQty.Text := FloatToStr(StrToFloat(edtR.Text) + StrToFloat(edtMtr.Text) * StrToFloat(edtSqIn.Text));
+  //edtPQty.Text := FormatFloat('##.00',StrToFloat(edtPQty.Text));
+end;
+
+procedure TfrmTrans.edtMtrKeyPress(Sender: TObject; var Key: Char);
+begin
+  if Key = #13 then edtPQty.SetFocus;
+end;
+
+procedure TfrmTrans.edtSqInChange(Sender: TObject);
+begin
+  if Length(edtMtr.Text) < 1 then edtMtr.Text := '0';
+  if Length(edtSqIn.Text) < 1 then edtSqIn.Text := '0';
+  if Length(edtPQty.Text) < 1 then edtPQty.Text := '0';
+  edtPQty.Text := FloatToStr(StrToFloat(edtR.Text) * StrToFloat(edtMtr.Text) * StrToFloat(edtSqIn.Text));
+  //edtPQty.Text := FormatFloat('##.00',StrToFloat(edtPQty.Text));
+end;
+
+procedure TfrmTrans.edtRKeyPress(Sender: TObject; var Key: Char);
+begin
+  if Key = #13 then edtMtr.SetFocus;
+end;
+
+procedure TfrmTrans.edtRChange(Sender: TObject);
+begin
+  if Length(edtR.Text) < 1 then edtR.Text := '0';
+  if Length(edtMtr.Text) < 1 then edtMtr.Text := '0';
+  if Length(edtSqIn.Text) < 1 then edtSqIn.Text := '0';
+  if Length(edtPQty.Text) < 1 then edtPQty.Text := '0';
+  edtPQty.Text := FloatToStr(StrToFloat(edtR.Text) * StrToFloat(edtMtr.Text) * StrToFloat(edtSqIn.Text));
+  //edtPQty.Text := FormatFloat('##.00',StrToFloat(edtPQty.Text));
+  {qt := StrToFloat(edtR.Text) * StrToFloat(edtMtr.Text) * StrToFloat(edtSqIn.Text);
+  edtPQty.Text := FormatFloat('##,##,##,###.00',qt)}
+end;
+
+procedure TfrmTrans.edtTotalKeyPress(Sender: TObject; var Key: Char);
+var
+qty,prc,tl : double;
+begin
+  if key = #13 then
+  begin
+    if StrToFloat(edtTotal.Text) < 0.1 then
+    begin
+      ShowMessage('Total can not be zero.');
+      Abort;
+    end;
+
+    if edtPQty.Enabled = True then
+    begin
+      qty := StrToFloat(edtPQty.Text);
+      tl := StrToFloat(edtTotal.Text);
+      prc := tl / qty;
+      edtPPrice.Text := FloatToStr(prc);
+    end
+    else
+    begin
+      qty := StrToFloat(edtSQty.Text);
+      tl := StrToFloat(edtTotal.Text);
+      prc := tl / qty;
+      edtSPrice.Text := FloatToStr(prc);
+    end;
+    if btnUpdate.Enabled = True then btnUpdate.SetFocus else btnNext.SetFocus;
+  end;
+end;
+
+procedure TfrmTrans.edtQtyChange(Sender: TObject);
+begin
+ if Length(edtW.Text) < 1 then edtW.Text := '0';
+  if Length(edtL.Text) < 1 then edtL.Text := '0';
+  if Length(edtQty.Text) < 1 then edtQty.Text := '0';
+  if Length(edtSQty.Text) < 1 then edtSQty.Text := '0';
+  edtSQty.Text := FloatToStr(StrToFloat(edtW.Text) * StrToFloat(edtL.Text)* StrToFloat(edtQty.Text));
+end;
+
+procedure TfrmTrans.edtQtyKeyPress(Sender: TObject; var Key: Char);
+begin
+     if Key = #13 then
+  begin
+    if edtSQty.Enabled = True then edtSQty.SetFocus else edtPQty.SetFocus;
+    edtSQty.SetFocus;
+ end;
+end;
+
+procedure TfrmTrans.edtAdvBChange(Sender: TObject);
+begin
+  if Length(edtAdvB.Text) < 1 then edtAdvB.Text := '0';
+  lblNet.Caption := FloatToStr(StrToFloat(lblGross.Caption) - StrToFloat(edtAdvC.Text) - StrToFloat(edtAdvB.Text) - StrToFloat(edtDiscA.Text) + StrToFloat(edtVATA.Text) + StrToFloat(edtSChargeA.Text));
+//  cboVType.Text:='BR - Bank Receipt';
+//  if iVNoSerial=5 then sql := 'select Isnull(max(VNo),0) + 1 from ' + iCYVData + ' Where VType=' + QuotedStr(Copy(cboVType.Text, 1, 2))
+//  else sql := 'select Isnull(max(VNo),0) + 1 from ' + iCYVData;
+//  DM.CallSQL1(sql);
+//  edtVNo.Text := IntToStr(DM.qryFR1.Fields[0].AsInteger);
+//  if (Copy(cboVType.Text,1,2) = 'BP') or (Copy(cboVType.Text,1,2) = 'BR') then edtChq.Enabled := True
+//  else
+//  begin
+//  edtChq.Enabled := False;
+//    edtChq.Text := '';
+//  end;
+
+end;
+
+procedure TfrmTrans.edtVNoJVChange(Sender: TObject);
+begin
+ // sql := '';
+ // sql := 'select Isnull(max(VNo),0) + 1 from ' + iCYVData; // sql := 'Select VNo from Voucher04 Where VNo = (VNo.Text);
+ // DM.CallSQL1(SQL);
+ // mVNo := DM.qryFR1.Fields[0].Asinteger;
+end;
+
+procedure TfrmTrans.edtDiscPChange(Sender: TObject);
+begin
+  if Length(edtDiscP.Text) < 1 then edtDiscP.Text := '0';
+  edtDiscA.Text := FloatToStr(StrToFloat(lblGross.Caption) * StrToFloat(edtDiscP.Text)/100);
+  lblNet.Caption := FloatToStr(StrToFloat(lblGross.Caption) - StrToFloat(edtAdvC.Text) - StrToFloat(edtAdvB.Text) - StrToFloat(edtDiscA.Text) + StrToFloat(edtVATA.Text) + StrToFloat(edtSChargeA.Text));
+end;
+
+procedure TfrmTrans.edtVATPChange(Sender: TObject);
+begin
+  if Length(edtVATP.Text) < 1 then edtVATP.Text := '0';
+  edtVATA.Text := FloatToStr(StrToFloat(lblGross.Caption) * StrToFloat(edtVATP.Text)/100);
+  lblNet.Caption := FloatToStr(StrToFloat(lblGross.Caption) - StrToFloat(edtAdvC.Text) - StrToFloat(edtAdvB.Text) - StrToFloat(edtDiscA.Text) + StrToFloat(edtVATA.Text) + StrToFloat(edtSChargeA.Text));
+end;
+
+procedure TfrmTrans.edtSChargeAChange(Sender: TObject);
+begin
+  if Length(edtSChargeA.Text) < 1 then edtSChargeA.Text := '0';
+  lblNet.Caption := FloatToStr(StrToFloat(lblGross.Caption) - StrToFloat(edtAdvC.Text) - StrToFloat(edtAdvB.Text) - StrToFloat(edtDiscA.Text) + StrToFloat(edtVATA.Text) + StrToFloat(edtSChargeA.Text));
+end;
+
+end.
+
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               object frmTransGC: TfrmTransGC
+  Left = 41
+  Top = 103
+  BorderStyle = bsDialog
+  Caption = 'Sales / Purchase'
+  ClientHeight = 460
+  ClientWidth = 723
+  Color = 15509143
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poMainFormCenter
+  OnActivate = FormActivate
+  OnCreate = FormCreate
+  PixelsPerInch = 96
+  TextHeight = 13
+  object lblTransIDCap: TLabel
+    Left = 5
+    Top = 6
+    Width = 40
+    Height = 13
+    Caption = 'Trans. #'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
+  end
+  object lblTransDate: TLabel
+    Left = 174
+    Top = 5
+    Width = 32
+    Height = 13
+    AutoSize = False
+    Caption = 'Date :'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
+  end
+  object lblTransBy: TLabel
+    Left = 5
+    Top = 26
+    Width = 51
+    Height = 13
+    Caption = 'Trans. By :'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label3: TLabel
+    Left = 5
+    Top = 70
+    Width = 44
+    Height = 13
+    Caption = 'Address :'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
+  end
+  object lblSectName: TLabel
+    Left = 397
+    Top = 5
+    Width = 37
+    Height = 13
+    Caption = 'Sector :'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
+  end
+  object lblCont: TLabel
+    Left = 5
+    Top = 49
+    Width = 44
+    Height = 13
+    Caption = 'Supplier :'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
+  end
+  object lblIndentDate: TLabel
+    Left = 340
+    Top = 475
+    Width = 56
+    Height = 13
+    Caption = 'Indent Date'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
+  end
+  object lblDeptName: TLabel
+    Left = 397
+    Top = 26
+    Width = 61
+    Height = 13
+    Caption = 'Department :'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label12: TLabel
+    Left = 110
+    Top = 127
+    Width = 65
+    Height = 13
+    Caption = 'Description'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clNavy
+    Font.Height = -11
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label14: TLabel
+    Left = 5
+    Top = 127
+    Width = 22
+    Height = 13
+    Caption = 'ID#'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clNavy
+    Font.Height = -11
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label15: TLabel
+    Left = 317
+    Top = 127
+    Width = 24
+    Height = 13
+    Caption = 'Unit'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clNavy
+    Font.Height = -11
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label16: TLabel
+    Left = 362
+    Top = 127
+    Width = 32
+    Height = 13
+    Caption = 'S.Qty'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clNavy
+    Font.Height = -11
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label17: TLabel
+    Left = 517
+    Top = 127
+    Width = 42
+    Height = 13
+    Caption = 'P.Price'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clNavy
+    Font.Height = -11
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label18: TLabel
+    Left = 571
+    Top = 127
+    Width = 30
+    Height = 13
+    Caption = 'Disc.'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clNavy
+    Font.Height = -11
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label19: TLabel
+    Left = 623
+    Top = 127
+    Width = 30
+    Height = 13
+    Caption = 'Total'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clNavy
+    Font.Height = -11
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label2: TLabel
+    Left = 6
+    Top = 311
+    Width = 71
+    Height = 13
+    Alignment = taRightJustify
+    Caption = 'Taka in Word :'
+  end
+  object lblReq: TLabel
+    Left = 397
+    Top = 48
+    Width = 33
+    Height = 13
+    Caption = 'Req. #'
+  end
+  object lblReqdate: TLabel
+    Left = 571
+    Top = 48
+    Width = 49
+    Height = 13
+    Caption = 'Req. Date'
+  end
+  object lblIndent: TLabel
+    Left = 189
+    Top = 474
+    Width = 40
+    Height = 13
+    Caption = 'Indent #'
+  end
+  object Label7: TLabel
+    Left = 466
+    Top = 127
+    Width = 32
+    Height = 13
+    Caption = 'P.Qty'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clNavy
+    Font.Height = -11
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label8: TLabel
+    Left = 409
+    Top = 127
+    Width = 42
+    Height = 13
+    Caption = 'S.Price'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clNavy
+    Font.Height = -11
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label11: TLabel
+    Left = 255
+    Top = 127
+    Width = 51
+    Height = 13
+    Caption = 'Designer'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clNavy
+    Font.Height = -11
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label13: TLabel
+    Left = 360
+    Top = 93
+    Width = 11
+    Height = 13
+    Caption = 'W'
+  end
+  object Label21: TLabel
+    Left = 388
+    Top = 93
+    Width = 6
+    Height = 13
+    Caption = 'L'
+  end
+  object Label22: TLabel
+    Left = 486
+    Top = 93
+    Width = 23
+    Height = 13
+    Caption = 'Mitre'
+  end
+  object Label23: TLabel
+    Left = 517
+    Top = 109
+    Width = 44
+    Height = 13
+    Caption = '1 Mitre = '
+  end
+  object Label24: TLabel
+    Left = 605
+    Top = 109
+    Width = 40
+    Height = 13
+    Caption = 'Sqr. Inc.'
+  end
+  object Label26: TLabel
+    Left = 458
+    Top = 93
+    Width = 16
+    Height = 13
+    Caption = 'Rol'
+  end
+  object Panel5: TPanel
+    Left = 2
+    Top = 418
+    Width = 461
+    Height = 39
+    BevelOuter = bvNone
+    BorderStyle = bsSingle
+    Color = clSilver
+    TabOrder = 16
+    object btnAdd: TLMDShapeButton
+      Left = 7
+      Top = 4
+      Width = 85
+      Height = 27
+      Caption = '&Add'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -13
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold]
+      ParentFont = False
+      OnClick = btnAddClick
+      AllowTransparency = True
+      AllowMouseOver = False
+      MouseOver = False
+      Mode = sbmShapeFill
+      Shape.Brush.Color = clBtnFace
+      Shape.RoundPercent = 100
+      Shape.Shadow.Depth = 0
+      Shape.Shape = stRoundRect
+      Style = sbs3D
+      ShapeFill.Style = sfGradient
+    end
+    object btnSave: TLMDShapeButton
+      Left = 271
+      Top = 4
+      Width = 85
+      Height = 27
+      Caption = '&Save'
+      Enabled = False
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -13
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold]
+      ParentFont = False
+      OnClick = btnSaveClick
+      AllowTransparency = True
+      AllowMouseOver = False
+      MouseOver = False
+      Mode = sbmShapeFill
+      Shape.Brush.Color = clBtnFace
+      Shape.RoundPercent = 100
+      Shape.Shadow.Depth = 0
+      Shape.Shape = stRoundRect
+      Style = sbs3D
+      ShapeFill.Style = sfGradient
+    end
+    object btnPost: TLMDShapeButton
+      Left = 359
+      Top = 4
+      Width = 85
+      Height = 27
+      Caption = 'Post'
+      Enabled = False
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -13
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold]
+      ParentFont = False
+      OnClick = btnPostClick
+      AllowTransparency = True
+      AllowMouseOver = False
+      MouseOver = False
+      Mode = sbmShapeFill
+      Shape.Brush.Color = clBtnFace
+      Shape.RoundPercent = 100
+      Shape.Shadow.Depth = 0
+      Shape.Shape = stRoundRect
+      Style = sbs3D
+      ShapeFill.Style = sfGradient
+    end
+    object btnClear: TLMDShapeButton
+      Left = 95
+      Top = 4
+      Width = 85
+      Height = 27
+      Caption = 'Clear'
+      Enabled = False
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -13
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold]
+      ParentFont = False
+      OnClick = btnClearClick
+      AllowTransparency = True
+      AllowMouseOver = False
+      MouseOver = False
+      Mode = sbmShapeFill
+      Shape.Brush.Color = clBtnFace
+      Shape.RoundPercent = 100
+      Shape.Shadow.Depth = 0
+      Shape.Shape = stRoundRect
+      Style = sbs3D
+      ShapeFill.Style = sfGradient
+    end
+    object btnClearAll: TLMDShapeButton
+      Left = 183
+      Top = 4
+      Width = 85
+      Height = 27
+      Caption = 'Clear All'
+      Enabled = False
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -13
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold]
+      ParentFont = False
+      OnClick = btnClearAllClick
+      AllowTransparency = True
+      AllowMouseOver = False
+      MouseOver = False
+      Mode = sbmShapeFill
+      Shape.Brush.Color = clBtnFace
+      Shape.RoundPercent = 100
+      Shape.Shadow.Depth = 0
+      Shape.Shape = stRoundRect
+      Style = sbs3D
+      ShapeFill.Style = sfGradient
+    end
+  end
+  object dtpSPDate: TDateTimePicker
+    Left = 208
+    Top = 2
+    Width = 113
+    Height = 21
+    CalAlignment = dtaLeft
+    Date = 37316.3652602893
+    Time = 37316.3652602893
+    Color = clBtnFace
+    DateFormat = dfShort
+    DateMode = dmComboBox
+    Kind = dtkDate
+    ParseInput = False
+    TabOrder = 1
+    OnKeyPress = dtpSPDateKeyPress
+  end
+  object cboSPBy: TComboBox
+    Left = 63
+    Top = 24
+    Width = 258
+    Height = 21
+    Hint = 'Double Click to see the Details'
+    TabStop = False
+    Color = clBtnFace
+    ItemHeight = 13
+    TabOrder = 2
+    OnKeyPress = cboSPByKeyPress
+  end
+  object cboSPID: TComboBox
+    Left = 63
+    Top = 2
+    Width = 82
+    Height = 21
+    Color = clBtnFace
+    ItemHeight = 13
+    TabOrder = 0
+    OnClick = cboSPIDClick
+    OnKeyPress = cboSPIDKeyPress
+  end
+  object cboSectName: TComboBox
+    Left = 462
+    Top = 2
+    Width = 259
+    Height = 21
+    Hint = 'Double Click to see the Details'
+    TabStop = False
+    Color = clBtnFace
+    ItemHeight = 13
+    TabOrder = 4
+    OnChange = cboSectNameChange
+    OnKeyPress = cboSectNameKeyPress
+  end
+  object cboContName: TComboBox
+    Left = 63
+    Top = 46
+    Width = 258
+    Height = 21
+    Hint = 'Double Click to see the Details'
+    TabStop = False
+    Color = clBtnFace
+    ItemHeight = 13
+    TabOrder = 3
+    OnChange = cboContNameChange
+    OnKeyPress = cboContNameKeyPress
+  end
+  object edtAddr: TEdit
+    Left = 63
+    Top = 68
+    Width = 657
+    Height = 21
+    Color = clBtnFace
+    TabOrder = 17
+  end
+  object edtItemID: TEdit
+    Left = 2
+    Top = 140
+    Width = 63
+    Height = 21
+    Color = clBtnFace
+    TabOrder = 18
+  end
+  object edtIName: TEdit
+    Left = 66
+    Top = 140
+    Width = 167
+    Height = 21
+    Color = clBtnFace
+    TabOrder = 8
+  end
+  object edtSQty: TEdit
+    Left = 353
+    Top = 140
+    Width = 51
+    Height = 21
+    Color = clBtnFace
+    TabOrder = 9
+    OnChange = edtSQtyChange
+    OnKeyPress = edtSQtyKeyPress
+  end
+  object edtPPrice: TEdit
+    Left = 512
+    Top = 140
+    Width = 57
+    Height = 21
+    Color = clBtnFace
+    TabOrder = 11
+    OnChange = edtPPriceChange
+    OnKeyPress = edtPPriceKeyPress
+  end
+  object edtDisc: TEdit
+    Left = 569
+    Top = 140
+    Width = 32
+    Height = 21
+    Color = clBtnFace
+    TabOrder = 12
+    OnChange = edtDiscChange
+    OnKeyPress = edtDiscKeyPress
+  end
+  object cboUOM: TComboBox
+    Left = 312
+    Top = 140
+    Width = 41
+    Height = 21
+    Color = clBtnFace
+    ItemHeight = 13
+    TabOrder = 15
+    OnExit = cboUOMExit
+    OnKeyPress = cboUOMKeyPress
+  end
+  object edtTotal: TEdit
+    Left = 601
+    Top = 140
+    Width = 79
+    Height = 21
+    Color = clBtnFace
+    TabOrder = 19
+    OnChange = edtTotalChange
+  end
+  object btnNext: TButton
+    Left = 681
+    Top = 140
+    Width = 19
+    Height = 22
+    Caption = '+'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 13
+    OnClick = btnNextClick
+  end
+  object DBGrid1: TDBGrid
+    Left = 2
+    Top = 163
+    Width = 699
+    Height = 142
+    Color = clBtnFace
+    DataSource = DSSPTDetail
+    Options = [dgColLines, dgRowLines, dgTabs, dgConfirmDelete, dgCancelOnExit]
+    TabOrder = 20
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'MS Sans Serif'
+    TitleFont.Style = []
+    OnDblClick = DBGrid1DblClick
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'ItemID'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -11
+        Font.Name = 'MS Sans Serif'
+        Font.Style = [fsBold]
+        Title.Caption = 'Sl #'
+        Title.Color = 12615808
+        Title.Font.Charset = DEFAULT_CHARSET
+        Title.Font.Color = clWhite
+        Title.Font.Height = -11
+        Title.Font.Name = 'MS Sans Serif'
+        Title.Font.Style = [fsBold]
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'IName'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -11
+        Font.Name = 'MS Sans Serif'
+        Font.Style = []
+        Title.Caption = 'Specification'
+        Title.Color = 12615808
+        Title.Font.Charset = DEFAULT_CHARSET
+        Title.Font.Color = clWhite
+        Title.Font.Height = -11
+        Title.Font.Name = 'MS Sans Serif'
+        Title.Font.Style = [fsBold]
+        Width = 186
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'EmpName'
+        Width = 59
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'UOMID'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -11
+        Font.Name = 'MS Sans Serif'
+        Font.Style = []
+        Title.Caption = 'UOM'
+        Title.Color = 12615808
+        Title.Font.Charset = DEFAULT_CHARSET
+        Title.Font.Color = clWhite
+        Title.Font.Height = -11
+        Title.Font.Name = 'MS Sans Serif'
+        Title.Font.Style = [fsBold]
+        Width = 39
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'SQty'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -11
+        Font.Name = 'MS Sans Serif'
+        Font.Style = []
+        Title.Color = 12615808
+        Title.Font.Charset = DEFAULT_CHARSET
+        Title.Font.Color = clWhite
+        Title.Font.Height = -11
+        Title.Font.Name = 'MS Sans Serif'
+        Title.Font.Style = [fsBold]
+        Width = 50
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'SPrice'
+        Width = 57
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'PQty'
+        Width = 50
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'PPrice'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -11
+        Font.Name = 'MS Sans Serif'
+        Font.Style = []
+        Title.Color = 12615808
+        Title.Font.Charset = DEFAULT_CHARSET
+        Title.Font.Color = clWhite
+        Title.Font.Height = -11
+        Title.Font.Name = 'MS Sans Serif'
+        Title.Font.Style = [fsBold]
+        Width = 55
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'IDiscP'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -11
+        Font.Name = 'MS Sans Serif'
+        Font.Style = []
+        Title.Caption = 'Disc.'
+        Title.Color = 12615808
+        Title.Font.Charset = DEFAULT_CHARSET
+        Title.Font.Color = clWhite
+        Title.Font.Height = -11
+        Title.Font.Name = 'MS Sans Serif'
+        Title.Font.Style = [fsBold]
+        Width = 31
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'Total'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -11
+        Font.Name = 'MS Sans Serif'
+        Font.Style = [fsBold]
+        Title.Color = 12615808
+        Title.Font.Charset = DEFAULT_CHARSET
+        Title.Font.Color = clWhite
+        Title.Font.Height = -11
+        Title.Font.Name = 'MS Sans Serif'
+        Title.Font.Style = [fsBold]
+        Width = 78
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'TNo'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -11
+        Font.Name = 'MS Sans Serif'
+        Font.Style = [fsBold]
+        Title.Color = 12615808
+        Title.Font.Charset = DEFAULT_CHARSET
+        Title.Font.Color = clWhite
+        Title.Font.Height = -11
+        Title.Font.Name = 'MS Sans Serif'
+        Title.Font.Style = [fsBold]
+        Visible = False
+      end>
+  end
+  object dtpIndentDate: TDateTimePicker
+    Left = 408
+    Top = 471
+    Width = 82
+    Height = 21
+    CalAlignment = dtaLeft
+    Date = 37316.3652602893
+    Time = 37316.3652602893
+    DateFormat = dfShort
+    DateMode = dmComboBox
+    Kind = dtkDate
+    ParseInput = False
+    TabOrder = 21
+  end
+  object edtTIW: TEdit
+    Left = 79
+    Top = 308
+    Width = 384
+    Height = 21
+    Color = clBtnFace
+    TabOrder = 22
+  end
+  object cboDeptName: TComboBox
+    Left = 462
+    Top = 24
+    Width = 259
+    Height = 21
+    Color = clBtnFace
+    ItemHeight = 13
+    TabOrder = 5
+    OnKeyPress = cboDeptNameKeyPress
+  end
+  object btnITSelect: TButton
+    Left = 234
+    Top = 141
+    Width = 17
+    Height = 20
+    Caption = '...'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 14
+    OnClick = btnITSelectClick
+  end
+  object cboIndentID: TComboBox
+    Left = 254
+    Top = 472
+    Width = 81
+    Height = 21
+    ItemHeight = 13
+    TabOrder = 23
+  end
+  object dtpReqDate: TDateTimePicker
+    Left = 622
+    Top = 44
+    Width = 99
+    Height = 21
+    CalAlignment = dtaLeft
+    Date = 37872.50864375
+    Time = 37872.50864375
+    Color = clBtnFace
+    DateFormat = dfShort
+    DateMode = dmComboBox
+    Kind = dtkDate
+    ParseInput = False
+    TabOrder = 7
+    OnKeyPress = dtpReqDateKeyPress
+  end
+  object cboReqID: TComboBox
+    Left = 462
+    Top = 46
+    Width = 99
+    Height = 21
+    Color = clBtnFace
+    ItemHeight = 13
+    TabOrder = 6
+    OnKeyPress = cboReqIDKeyPress
+  end
+  object rdoSPType: TRadioGroup
+    Left = 389
+    Top = 270
+    Width = 140
+    Height = 33
+    Columns = 2
+    ItemIndex = 0
+    Items.Strings = (
+      'Sales'
+      'Purchase')
+    TabOrder = 24
+    Visible = False
+  end
+  object btnUpdate: TButton
+    Left = 701
+    Top = 140
+    Width = 19
+    Height = 22
+    Caption = 'up'
+    Enabled = False
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 25
+    OnClick = btnUpdateClick
+  end
+  object edtPQty: TEdit
+    Left = 461
+    Top = 140
+    Width = 51
+    Height = 21
+    Color = clBtnFace
+    TabOrder = 10
+    OnChange = edtPQtyChange
+    OnKeyPress = edtPQtyKeyPress
+  end
+  object edtSPrice: TEdit
+    Left = 404
+    Top = 140
+    Width = 57
+    Height = 21
+    Color = clBtnFace
+    TabOrder = 26
+    OnChange = edtPPriceChange
+    OnKeyPress = edtSPriceKeyPress
+  end
+  object pnlVoucher: TPanel
+    Left = 2
+    Top = 332
+    Width = 461
+    Height = 74
+    BevelOuter = bvNone
+    BorderStyle = bsSingle
+    Enabled = False
+    TabOrder = 27
+    object Label6: TLabel
+      Left = 5
+      Top = 31
+      Width = 48
+      Height = 13
+      Alignment = taRightJustify
+      Caption = 'Dr. Code :'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      ParentFont = False
+    end
+    object Label20: TLabel
+      Left = 5
+      Top = 53
+      Width = 47
+      Height = 13
+      Alignment = taRightJustify
+      Caption = 'Cr. Code :'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      ParentFont = False
+    end
+    object Label1: TLabel
+      Left = 5
+      Top = 9
+      Width = 73
+      Height = 13
+      Alignment = taRightJustify
+      Caption = 'Voucher Type :'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      ParentFont = False
+    end
+    object Label5: TLabel
+      Left = 141
+      Top = 8
+      Width = 30
+      Height = 13
+      Caption = 'V. No.'
+    end
+    object Label9: TLabel
+      Left = 221
+      Top = 8
+      Width = 29
+      Height = 13
+      Caption = 'Chq #'
+    end
+    object Label25: TLabel
+      Left = 347
+      Top = 8
+      Width = 21
+      Height = 13
+      Caption = 'Amt.'
+    end
+    object cboDrCode: TComboBox
+      Left = 79
+      Top = 27
+      Width = 377
+      Height = 21
+      Hint = 'Double Click to see the Details'
+      TabStop = False
+      Color = clBtnFace
+      ItemHeight = 13
+      TabOrder = 0
+    end
+    object cboCrCode: TComboBox
+      Left = 79
+      Top = 49
+      Width = 377
+      Height = 21
+      Hint = 'Double Click to see the Details'
+      TabStop = False
+      Color = clBtnFace
+      ItemHeight = 13
+      TabOrder = 1
+    end
+    object edtVNo: TEdit
+      Left = 176
+      Top = 5
+      Width = 41
+      Height = 21
+      Color = clBtnFace
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 2
+    end
+    object cboVType: TComboBox
+      Left = 79
+      Top = 5
+      Width = 58
+      Height = 21
+      Color = clBtnFace
+      ItemHeight = 13
+      TabOrder = 3
+      OnChange = cboVTypeChange
+      Items.Strings = (
+        'BP - Bank Payment'
+        'CP - Cash Payment'
+        'BR - Bank Receipt'
+        'CR - Cash Receipt'
+        'JV - Journal Voucher')
+    end
+    object edtChq: TEdit
+      Left = 252
+      Top = 5
+      Width = 93
+      Height = 21
+      Color = clBtnFace
+      Enabled = False
+      TabOrder = 4
+    end
+    object edtTAmt: TEdit
+      Left = 375
+      Top = 5
+      Width = 81
+      Height = 21
+      Color = clBtnFace
+      Enabled = False
+      TabOrder = 5
+      Text = '0'
+    end
+  end
+  object cboEmpName: TComboBox
+    Left = 252
+    Top = 140
+    Width = 60
+    Height = 21
+    Color = clBtnFace
+    ItemHeight = 13
+    TabOrder = 28
+    OnKeyPress = cboEmpNameKeyPress
+  end
+  object Panel1: TPanel
+    Left = 508
+    Top = 306
+    Width = 193
+    Height = 60
+    BevelOuter = bvLowered
+    TabOrder = 29
+    object lblSTotalCap: TLabel
+      Left = 16
+      Top = 3
+      Width = 52
+      Height = 13
+      Caption = 'Sub Total :'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      ParentFont = False
+    end
+    object lblSTotal: TLabel
+      Left = 72
+      Top = 2
+      Width = 98
+      Height = 14
+      Alignment = taRightJustify
+      AutoSize = False
+      Caption = '0.00'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+    object Label4: TLabel
+      Left = 16
+      Top = 21
+      Width = 49
+      Height = 13
+      Caption = 'Advance :'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      ParentFont = False
+    end
+    object lblGTotal: TLabel
+      Left = 72
+      Top = 44
+      Width = 98
+      Height = 15
+      Alignment = taRightJustify
+      AutoSize = False
+      Caption = '0.00'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+    object Label10: TLabel
+      Left = 16
+      Top = 43
+      Width = 36
+      Height = 13
+      Caption = 'Total'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold, fsItalic, fsUnderline]
+      ParentFont = False
+    end
+    object edtAdv: TEdit
+      Left = 69
+      Top = 19
+      Width = 101
+      Height = 21
+      Color = clBtnFace
+      TabOrder = 0
+      Text = '0'
+      OnChange = edtAdvChange
+    end
+  end
+  object Panel2: TPanel
+    Left = 509
+    Top = 370
+    Width = 193
+    Height = 88
+    TabOrder = 30
+    object btnClose: TButton
+      Left = 13
+      Top = 58
+      Width = 164
+      Height = 25
+      Caption = 'C L O S E'
+      TabOrder = 0
+      OnClick = btnCloseClick
+    end
+    object btnInvoice: TButton
+      Left = 13
+      Top = 6
+      Width = 164
+      Height = 25
+      Caption = 'I N V O I C E'
+      TabOrder = 1
+      OnClick = btnInvoiceClick
+    end
+    object btnMR: TButton
+      Left = 13
+      Top = 32
+      Width = 164
+      Height = 25
+      Caption = 'M O N E Y   R E C E I P T'
+      TabOrder = 2
+      OnClick = btnMRClick
+    end
+  end
+  object edtW: TEdit
+    Left = 354
+    Top = 105
+    Width = 25
+    Height = 21
+    Color = clBtnFace
+    TabOrder = 31
+    Text = '0'
+    OnChange = edtWChange
+    OnKeyPress = edtWKeyPress
+  end
+  object edtL: TEdit
+    Left = 379
+    Top = 105
+    Width = 25
+    Height = 21
+    Color = clBtnFace
+    TabOrder = 32
+    Text = '0'
+    OnChange = edtLChange
+    OnKeyPress = edtLKeyPress
+  end
+  object edtMtr: TEdit
+    Left = 485
+    Top = 105
+    Width = 28
+    Height = 21
+    Color = clBtnFace
+    TabOrder = 33
+    Text = '0'
+    OnChange = edtMtrChange
+    OnKeyPress = edtMtrKeyPress
+  end
+  object edtSqIn: TEdit
+    Left = 563
+    Top = 105
+    Width = 38
+    Height = 21
+    Color = clBtnFace
+    Enabled = False
+    TabOrder = 34
+    Text = '39.27'
+    OnChange = edtSqInChange
+  end
+  object edtR: TEdit
+    Left = 455
+    Top = 105
+    Width = 28
+    Height = 21
+    Color = clBtnFace
+    TabOrder = 35
+    Text = '0'
+    OnChange = edtRChange
+    OnKeyPress = edtRKeyPress
+  end
+  object DSSPTDetail: TDataSource
+    DataSet = QrySPTDetail
+    Left = 301
+    Top = 205
+  end
+  object sp_SP: TStoredProc
+    AutoCalcFields = False
+    AutoRefresh = True
+    DatabaseName = 'Karbar'
+    StoredProcName = 'sp_Trans;1'
+    Left = 368
+    Top = 206
+    ParamData = <
+      item
+        DataType = ftInteger
+        Name = 'RETURN_VALUE'
+        ParamType = ptResult
+      end
+      item
+        DataType = ftSmallint
+        Name = '@QryType'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftInteger
+        Name = '@SPType'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftString
+        Name = '@SPID'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftString
+        Name = '@Ref'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftString
+        Name = '@SectID'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftString
+        Name = '@DeptID'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftString
+        Name = '@ContID'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftDateTime
+        Name = '@SPDate'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftString
+        Name = '@Addr'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftString
+        Name = '@SPBy'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftString
+        Name = '@SuppID'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftString
+        Name = '@ManuID'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftString
+        Name = '@ReqID'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftDateTime
+        Name = '@ReqDate'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftString
+        Name = '@VType'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftInteger
+        Name = '@VNo'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftString
+        Name = '@ACode'
+        ParamType = ptInput
+      end>
+  end
+  object tblSPTDetail1: TTable
+    CachedUpdates = True
+    DatabaseName = 'Karbar'
+    TableName = 'dbo.SPTDetail'
+    Left = 33
+    Top = 269
+    object tblSPTDetail1SPID: TStringField
+      FieldName = 'SPID'
+      FixedChar = True
+      Size = 6
+    end
+    object tblSPTDetail1ItemID: TStringField
+      FieldName = 'ItemID'
+      FixedChar = True
+      Size = 8
+    end
+    object tblSPTDetail1IName: TStringField
+      FieldName = 'IName'
+      Size = 100
+    end
+    object tblSPTDetail1Acode: TStringField
+      FieldName = 'Acode'
+      FixedChar = True
+      Size = 13
+    end
+    object tblSPTDetail1TNo: TSmallintField
+      FieldName = 'TNo'
+    end
+    object tblSPTDetail1SQty: TFloatField
+      FieldName = 'SQty'
+    end
+    object tblSPTDetail1SPrice: TFloatField
+      FieldName = 'SPrice'
+    end
+    object tblSPTDetail1IDiscP: TFloatField
+      FieldName = 'IDiscP'
+    end
+    object tblSPTDetail1Total: TFloatField
+      FieldName = 'Total'
+    end
+    object tblSPTDetail1UOMID: TStringField
+      FieldName = 'UOMID'
+      FixedChar = True
+      Size = 10
+    end
+    object tblSPTDetail1PQty: TFloatField
+      FieldName = 'PQty'
+    end
+    object tblSPTDetail1PPrice: TFloatField
+      FieldName = 'PPrice'
+    end
+    object tblSPTDetail1OQty: TFloatField
+      FieldName = 'OQty'
+    end
+    object tblSPTDetail1DQty: TFloatField
+      FieldName = 'DQty'
+    end
+    object tblSPTDetail1BQty: TFloatField
+      FieldName = 'BQty'
+    end
+    object tblSPTDetail1EmpID: TStringField
+      FieldName = 'EmpID'
+      FixedChar = True
+      Size = 6
+    end
+    object tblSPTDetail1EmpName: TStringField
+      FieldKind = fkLookup
+      FieldName = 'EmpName'
+      LookupDataSet = frmEmp.QryEmp
+      LookupKeyFields = 'EmpID'
+      LookupResultField = 'EmpName'
+      KeyFields = 'EmpID'
+      Size = 50
+      Lookup = True
+    end
+  end
+  object sp_SPTDetail: TStoredProc
+    DatabaseName = 'Karbar'
+    StoredProcName = 'sp_TransTDetail;1'
+    Left = 624
+    Top = 171
+    ParamData = <
+      item
+        DataType = ftInteger
+        Name = 'RETURN_VALUE'
+        ParamType = ptResult
+      end
+      item
+        DataType = ftSmallint
+        Name = '@SPType'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftString
+        Name = '@SPID'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftString
+        Name = '@ItemID'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftString
+        Name = '@IName'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftString
+        Name = '@EmpID'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftString
+        Name = '@Acode'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftSmallint
+        Name = '@Tno'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftFloat
+        Name = '@SQty'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftFloat
+        Name = '@SPrice'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftFloat
+        Name = '@PQty'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftFloat
+        Name = '@PPrice'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftFloat
+        Name = '@IDiscP'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftFloat
+        Name = '@Total'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftString
+        Name = '@UOMID'
+        ParamType = ptInput
+      end>
+  end
+  object spJV: TStoredProc
+    DatabaseName = 'Karbar'
+    StoredProcName = 'InsertJV;1'
+    Left = 187
+    Top = 216
+    ParamData = <
+      item
+        DataType = ftInteger
+        Name = 'RETURN_VALUE'
+        ParamType = ptResult
+      end
+      item
+        DataType = ftDateTime
+        Name = '@VDate'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftString
+        Name = '@Vtype'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftInteger
+        Name = '@VNo'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftSmallint
+        Name = '@TNo'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftString
+        Name = '@ACode'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftFloat
+        Name = '@Debit'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftFloat
+        Name = '@Credit'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftString
+        Name = '@SectID'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftString
+        Name = '@DeptID'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftString
+        Name = '@CustID'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftString
+        Name = '@JobID'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftString
+        Name = '@Chq'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftString
+        Name = '@Payee'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftString
+        Name = '@VDesc'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftString
+        Name = '@UserId'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftString
+        Name = '@EntryDT'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftString
+        Name = '@IsConf'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftString
+        Name = '@CreditCode'
+        ParamType = ptInput
+      end>
+  end
+  object QrySPTDetail: TQuery
+    DatabaseName = 'Karbar'
+    SQL.Strings = (
+      'select * from sptdetail')
+    Left = 271
+    Top = 208
+    object QrySPTDetailSPID: TStringField
+      FieldName = 'SPID'
+      Origin = 'KARBAR.sptdetail.SPID'
+      FixedChar = True
+      Size = 6
+    end
+    object QrySPTDetailItemID: TStringField
+      FieldName = 'ItemID'
+      Origin = 'KARBAR.sptdetail.ItemID'
+      FixedChar = True
+      Size = 8
+    end
+    object QrySPTDetailIName: TStringField
+      FieldName = 'IName'
+      Origin = 'KARBAR.sptdetail.IName'
+      Size = 100
+    end
+    object QrySPTDetailEmpID: TStringField
+      FieldName = 'EmpID'
+      Origin = 'KARBAR.sptdetail.EmpID'
+      FixedChar = True
+      Size = 6
+    end
+    object QrySPTDetailAcode: TStringField
+      FieldName = 'Acode'
+      Origin = 'KARBAR.sptdetail.Acode'
+      FixedChar = True
+      Size = 13
+    end
+    object QrySPTDetailTNo: TSmallintField
+      FieldName = 'TNo'
+      Origin = 'KARBAR.sptdetail.TNo'
+    end
+    object QrySPTDetailSQty: TFloatField
+      FieldName = 'SQty'
+      Origin = 'KARBAR.sptdetail.SQty'
+    end
+    object QrySPTDetailSPrice: TFloatField
+      FieldName = 'SPrice'
+      Origin = 'KARBAR.sptdetail.SPrice'
+    end
+    object QrySPTDetailIDiscP: TFloatField
+      FieldName = 'IDiscP'
+      Origin = 'KARBAR.sptdetail.IDiscP'
+    end
+    object QrySPTDetailTotal: TFloatField
+      FieldName = 'Total'
+      Origin = 'KARBAR.sptdetail.Total'
+    end
+    object QrySPTDetailUOMID: TStringField
+      FieldName = 'UOMID'
+      Origin = 'KARBAR.sptdetail.UOMID'
+      FixedChar = True
+      Size = 10
+    end
+    object QrySPTDetailPQty: TFloatField
+      FieldName = 'PQty'
+      Origin = 'KARBAR.sptdetail.PQty'
+    end
+    object QrySPTDetailPPrice: TFloatField
+      FieldName = 'PPrice'
+      Origin = 'KARBAR.sptdetail.PPrice'
+    end
+    object QrySPTDetailOQty: TFloatField
+      FieldName = 'OQty'
+      Origin = 'KARBAR.sptdetail.OQty'
+    end
+    object QrySPTDetailDQty: TFloatField
+      FieldName = 'DQty'
+      Origin = 'KARBAR.sptdetail.DQty'
+    end
+    object QrySPTDetailBQty: TFloatField
+      FieldName = 'BQty'
+      Origin = 'KARBAR.sptdetail.BQty'
+    end
+    object QrySPTDetailEmpName: TStringField
+      FieldKind = fkLookup
+      FieldName = 'EmpName'
+      LookupDataSet = QryEmp
+      LookupKeyFields = 'EmpID'
+      LookupResultField = 'EmpName'
+      KeyFields = 'EmpID'
+      Size = 100
+      Lookup = True
+    end
+  end
+  object QryEmp: TQuery
+    DatabaseName = 'Karbar'
+    SQL.Strings = (
+      'Select EmpID,EmpName from Employee')
+    Left = 472
+    Top = 328
+    object QryEmpEmpID: TStringField
+      FieldName = 'EmpID'
+      Origin = 'KARBAR.Employee.EmpID'
+      FixedChar = True
+      Size = 6
+    end
+    object QryEmpEmpName: TStringField
+      FieldName = 'EmpName'
+      Origin = 'KARBAR.Employee.EmpName'
+      Size = 30
+    end
+  end
+end
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                unit TransGC;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
+  StdCtrls, DBCtrls, Grids, DBGrids, QuickRpt, Qrctrls, ExtCtrls, DBCGrids,
+  Db, DBTables, ComCtrls, Abcdbatl, DBLookup, Mask, Abccurlb, Abcdbcur,
+  Abcbtn, Abchandl, Abcmm, Abcatlab, lmdcctrl, lmdctrl,
+  lmdeditb, lmdmemoc, LMDMemo, lmdmmS, lmdbtn, lmdshapA;
+
+type
+  TfrmTransGC = class(TForm)
+    DSSPTDetail: TDataSource;
+    Panel5: TPanel;
+    btnAdd: TLMDShapeButton;
+    btnSave: TLMDShapeButton;
+    cboSectName: TComboBox;
+    Label3: TLabel;
+    lblSectName: TLabel;
+    lblCont: TLabel;
+    cboContName: TComboBox;
+    edtAddr: TEdit;
+    lblIndentDate: TLabel;
+    lblDeptName: TLabel;
+    Label12: TLabel;
+    Label14: TLabel;
+    Label15: TLabel;
+    Label16: TLabel;
+    Label17: TLabel;
+    Label18: TLabel;
+    Label19: TLabel;
+    edtItemID: TEdit;
+    edtIName: TEdit;
+    edtSQty: TEdit;
+    edtPPrice: TEdit;
+    edtDisc: TEdit;
+    cboUOM: TComboBox;
+    edtTotal: TEdit;
+    btnNext: TButton;
+    DBGrid1: TDBGrid;
+    dtpIndentDate: TDateTimePicker;
+    edtTIW: TEdit;
+    Label2: TLabel;
+    btnPost: TLMDShapeButton;
+    spJV: TStoredProc;
+    cboDeptName: TComboBox;
+    btnITSelect: TButton;
+    lblReq: TLabel;
+    lblReqdate: TLabel;
+    lblIndent: TLabel;
+    cboIndentID: TComboBox;
+    dtpReqDate: TDateTimePicker;
+    cboReqID: TComboBox;
+    btnClear: TLMDShapeButton;
+    btnClearAll: TLMDShapeButton;
+    btnUpdate: TButton;
+    Label7: TLabel;
+    edtPQty: TEdit;
+    cboSPID: TComboBox;
+    dtpSPDate: TDateTimePicker;
+    tblSPTDetail1: TTable;
+    sp_SP: TStoredProc;
+    sp_SPTDetail: TStoredProc;
+    rdoSPType: TRadioGroup;
+    cboSPBy: TComboBox;
+    Label8: TLabel;
+    edtSPrice: TEdit;
+    tblSPTDetail1SPID: TStringField;
+    tblSPTDetail1ItemID: TStringField;
+    tblSPTDetail1IName: TStringField;
+    tblSPTDetail1Acode: TStringField;
+    tblSPTDetail1TNo: TSmallintField;
+    tblSPTDetail1SQty: TFloatField;
+    tblSPTDetail1SPrice: TFloatField;
+    tblSPTDetail1IDiscP: TFloatField;
+    tblSPTDetail1Total: TFloatField;
+    tblSPTDetail1UOMID: TStringField;
+    tblSPTDetail1PQty: TFloatField;
+    tblSPTDetail1PPrice: TFloatField;
+    tblSPTDetail1OQty: TFloatField;
+    tblSPTDetail1DQty: TFloatField;
+    tblSPTDetail1BQty: TFloatField;
+    pnlVoucher: TPanel;
+    Label6: TLabel;
+    Label20: TLabel;
+    Label1: TLabel;
+    Label5: TLabel;
+    cboDrCode: TComboBox;
+    cboCrCode: TComboBox;
+    edtVNo: TEdit;
+    cboVType: TComboBox;
+    Label9: TLabel;
+    edtChq: TEdit;
+    tblSPTDetail1EmpID: TStringField;
+    cboEmpName: TComboBox;
+    tblSPTDetail1EmpName: TStringField;
+    Label11: TLabel;
+    QrySPTDetail: TQuery;
+    QrySPTDetailSPID: TStringField;
+    QrySPTDetailItemID: TStringField;
+    QrySPTDetailIName: TStringField;
+    QrySPTDetailEmpID: TStringField;
+    QrySPTDetailAcode: TStringField;
+    QrySPTDetailTNo: TSmallintField;
+    QrySPTDetailSQty: TFloatField;
+    QrySPTDetailSPrice: TFloatField;
+    QrySPTDetailIDiscP: TFloatField;
+    QrySPTDetailTotal: TFloatField;
+    QrySPTDetailUOMID: TStringField;
+    QrySPTDetailPQty: TFloatField;
+    QrySPTDetailPPrice: TFloatField;
+    QrySPTDetailOQty: TFloatField;
+    QrySPTDetailDQty: TFloatField;
+    QrySPTDetailBQty: TFloatField;
+    QryEmp: TQuery;
+    QryEmpEmpID: TStringField;
+    QryEmpEmpName: TStringField;
+    QrySPTDetailEmpName: TStringField;
+    Panel1: TPanel;
+    lblSTotalCap: TLabel;
+    lblSTotal: TLabel;
+    Label4: TLabel;
+    lblGTotal: TLabel;
+    Label10: TLabel;
+    edtAdv: TEdit;
+    Panel2: TPanel;
+    btnClose: TButton;
+    btnInvoice: TButton;
+    btnMR: TButton;
+    edtW: TEdit;
+    edtL: TEdit;
+    Label13: TLabel;
+    Label21: TLabel;
+    edtMtr: TEdit;
+    edtSqIn: TEdit;
+    Label22: TLabel;
+    Label23: TLabel;
+    Label24: TLabel;
+    Label25: TLabel;
+    edtTAmt: TEdit;
+    Label26: TLabel;
+    edtR: TEdit;
+    procedure btnCloseClick(Sender: TObject);
+    procedure FormActivate(Sender: TObject);
+    procedure btnAddClick(Sender: TObject);
+    procedure LMD3DCaptionButton3Click(Sender: TObject);
+    procedure cboContNameChange(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+    procedure btnSaveClick(Sender: TObject);
+    procedure btnClearClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure LMDShapeButton1Click(Sender: TObject);
+    procedure cboSectNameChange(Sender: TObject);
+    procedure btnNextClick(Sender: TObject);
+    procedure edtSQtyChange(Sender: TObject);
+    procedure edtPPriceChange(Sender: TObject);
+    procedure edtDiscChange(Sender: TObject);
+    procedure edtTotalChange(Sender: TObject);
+    procedure edtAdvChange(Sender: TObject);
+    procedure btnPostClick(Sender: TObject);
+    procedure btnITSelectClick(Sender: TObject);
+    procedure cboVTypeChange(Sender: TObject);
+    procedure DBGrid1DblClick(Sender: TObject);
+    procedure btnUpdateClick(Sender: TObject);
+    procedure btnClearAllClick(Sender: TObject);
+    procedure cboSPIDClick(Sender: TObject);
+    procedure cboSPIDKeyPress(Sender: TObject; var Key: Char);
+    procedure dtpSPDateKeyPress(Sender: TObject; var Key: Char);
+    procedure cboSPByKeyPress(Sender: TObject; var Key: Char);
+    procedure cboContNameKeyPress(Sender: TObject; var Key: Char);
+    procedure cboSectNameKeyPress(Sender: TObject; var Key: Char);
+    procedure cboDeptNameKeyPress(Sender: TObject; var Key: Char);
+    procedure cboReqIDKeyPress(Sender: TObject; var Key: Char);
+    procedure dtpReqDateKeyPress(Sender: TObject; var Key: Char);
+    procedure cboUOMKeyPress(Sender: TObject; var Key: Char);
+    procedure edtDiscKeyPress(Sender: TObject; var Key: Char);
+    procedure edtSQtyKeyPress(Sender: TObject; var Key: Char);
+    procedure edtPQtyKeyPress(Sender: TObject; var Key: Char);
+    procedure edtSPriceKeyPress(Sender: TObject; var Key: Char);
+    procedure edtPPriceKeyPress(Sender: TObject; var Key: Char);
+    procedure edtPQtyChange(Sender: TObject);
+    procedure btnInvoiceClick(Sender: TObject);
+    procedure cboEmpNameKeyPress(Sender: TObject; var Key: Char);
+    procedure edtWKeyPress(Sender: TObject; var Key: Char);
+    procedure edtLKeyPress(Sender: TObject; var Key: Char);
+    procedure edtWChange(Sender: TObject);
+    procedure edtLChange(Sender: TObject);
+    procedure btnMRClick(Sender: TObject);
+    procedure edtMtrChange(Sender: TObject);
+    procedure edtMtrKeyPress(Sender: TObject; var Key: Char);
+    procedure edtSqInChange(Sender: TObject);
+    procedure cboUOMExit(Sender: TObject);
+    procedure edtRKeyPress(Sender: TObject; var Key: Char);
+    procedure edtRChange(Sender: TObject);
+  private
+    { Private declarations }
+    mTNo,QryType : integer;
+    mSTotal,mGTotal,ttl,iqty,rqty : Double;
+    mContID,mDeptID,mSectID : string;
+    sqt,spr,pqt,ppr,spttl : double;
+    //mRLQty : Integer;
+    //mMTQty,mDetailID : Integer;
+    procedure CalTotal;
+  public
+    { Public declarations }
+    mSPType : integer;
+    mContType : string;
+end;
+
+var
+  frmTransGC: TfrmTransGC;
+
+implementation
+
+{$R *.DFM}
+uses DMKB,KBRVar,ITSelect,RBill,Emp,Invoice,MR;
+
+procedure TfrmTransGC.btnCloseClick(Sender: TObject);
+begin
+ Close;
+end;
+
+procedure TfrmTransGC.FormActivate(Sender: TObject);
+var
+sql : string;
+begin
+  sql := '';
+  sql := 'Select ContName + ' + QuotedStr(' - ') + ' + ContID From Contact Where ContType = ' + QuotedStr(mContType) + ' Order by ContName';
+  DM.cboAdd(cboContName,sql);
+  DM.cboAdd(cboSPID,'Select SPID From SP where SPType = ' + IntToStr(mSPType) + ' Order By SPID Desc');
+  if imnuSector = 1 then
+  begin
+    lblSectName.Visible := True;
+    cboSectName.Visible := True;
+    DM.cboAdd(cboSectName,'Select SectID + SectName From Sector');
+  end
+  else
+  begin
+    lblSectName.Visible := False;
+    cboSectName.Visible := False;
+  end;
+
+  if imnuDepartment = 1 then
+  begin
+    cboDeptName.Visible := True;
+    lblDeptName.Visible := True;
+    DM.cboAdd(cboDeptName,'Select DeptID+DeptName From Department');
+  end
+  else
+  begin
+    lblDeptName.Visible := False;
+    cboDeptName.Visible := False;
+  end;
+  mTNo := 0;
+  mSTotal := 0;
+  mGTotal := 0;
+  dtpSPDate.Date := Date;
+  DM.CallSQL2('Delete From SPTDetail');
+  QrySPTDetail.Close;
+  QrySPTDetail.Open;
+  cboVType.Text := '';
+  edtVNo.Text := '';
+  edtChq.Text := '';
+  cboDrCode.Text := '';
+  cboCrCode.Text := '';
+end;
+
+procedure TfrmTransGC.btnAddClick(Sender: TObject);
+begin
+  DM.CallSQL2('Delete From SPTDetail');
+  QrySPTDetail.Close;
+  QrySPTDetail.Open;
+  dtpSPDate.DateTime := Date;
+
+  DM.GetID('SPID','SP','000001','');
+  cboSPID.Text := DM.SetResult;
+  QryType := 1;
+  Caption := msgAdd;
+  btnSave.Enabled := True;
+  lblSTotal.Caption := '0';
+  edtAdv.Text := '0';
+  lblGTotal.Caption := '0';
+  edtTIW.Text := '';
+  pnlVoucher.Enabled := True;
+end;
+
+procedure TfrmTransGC.LMD3DCaptionButton3Click(Sender: TObject);
+begin
+Close;
+end;
+
+
+procedure TfrmTransGC.cboContNameChange(Sender: TObject);
+begin
+  sql := '';
+  sql := 'Select ContID, ContName, Addr From Contact Where ContID = ' + QuotedStr(Copy(cboContName.Text,Length(cboContName.Text) - 4,Length(cboContName.Text)));
+  DM.CallSQL1(SQL);
+  mContID := DM.qryFR1.Fields[0].AsString;
+  edtAddr.Text := DM.qryFR1.Fields[2].AsString;
+//  cboSectName.Text := DM.qryFR1.Fields[2].AsString + DM.qryFR1.Fields[3].AsString;
+//  cboDeptName.Text := DM.qryFR1.Fields[4].AsString + DM.qryFR1.Fields[5].AsString;
+end;
+
+procedure TfrmTransGC.Button2Click(Sender: TObject);
+begin
+Close;
+end;
+
+procedure TfrmTransGC.btnSaveClick(Sender: TObject);
+var
+ir,dtSP,dtreq : string;
+begin
+  dtSP := FormatDateTime('mm/dd/yyyy', dtpSPDate.Date);
+  dtreq := FormatDateTime('mm/dd/yyyy', dtpReqDate.Date);
+  //if rdoSPType.ItemIndex = 0 then mSPType := 1 else mSPType := 2;
+  with sp_SP do
+  begin
+    ParamByName('@QryType').AsInteger := QryType;
+    ParamByName('@SPType').AsInteger := mSPType;
+    ParamByName('@SPID').AsString :=  cboSPID.Text;
+    ParamByName('@SPDate').AsString := dtSP;
+    ParamByName('@SPBy').AsString := Copy(cboSPBy.Text,Length(cboSPBy.Text) - 5,Length(cboSPBy.Text));
+    ParamByName('@ContID').AsString :=  Copy(cboContName.Text,Length(cboContName.Text) - 4,Length(cboContName.Text));
+    ParamByName('@SectID').AsString :=  Copy(cboSectName.Text, 1, 2);
+    ParamByName('@DeptID').AsString := Copy(cboDeptName.Text, 1, 2);
+    ParamByName('@ReqID').AsString :=  cboReqID.Text;
+    ParamByName('@ReqDate').AsString := dtreq;
+    ParamByName('@VType').AsString := Copy(cboVType.Text,1,2);
+    ParamByName('@VNo').AsString := edtVNo.Text;
+  ExecProc;
+//******insert into IR**********
+  if QryType = 1 then
+  begin
+    {DM.GetID('IRID','IR','00000001','');
+    ir := DM.SetResult;
+    sql := '';
+    sql := 'Insert into IR (IR,IRID,IRDate,IRBy,ContID) Values (' + IntToStr(mSPType) + ', ' + QuotedStr(ir) + ', ' + QuotedStr(dtSP) + ', ' + QuotedStr(Copy(cboSPBy.Text,Length(cboSPBy.Text) - 5,Length(cboSPBy.Text))) + ', ' + QuotedStr(Copy(cboContName.Text,Length(cboContName.Text) - 4,Length(cboContName.Text))) + ')';
+    DM.CallSQL2(sql);
+    sql := '';
+    sql := 'INSERT INTO IRDetail (IR,IRID,ItemID,IName,Tno,IssQty,RecQty,Price,IDiscP,Total,UOMID) Select ' + IntToStr(mSPType) + ', ' + QuotedStr(ir) + ', ' + 'ItemID, IName,  Tno, IssQty, RecQty, Price, IDiscP, Total, UOMID From SPTDetail';
+    DM.CallSQL2(sql); }
+  end;
+//******************************
+  {DM.CallSQL2('Delete From SPTDetail');
+  tblSPTDetail.Close;
+  tblSPTDetail.Open; }
+  DM.cboAdd(cboSPID,'Select SPID From SP Where SPType = ' + IntToStr(mSPType) + ' Order By SPID Desc');
+  btnSave.Enabled := False;
+  if QryType = 1 then btnPost.Enabled := True else btnPost.Enabled := False;
+  ShowMessage('Saved Successfully');
+  end;
+end;
+
+procedure TfrmTransGC.btnClearClick(Sender: TObject);
+begin
+  sql := '';
+  sql := 'Delete from SPTDetail Where ItemID = ' + QuotedStr(edtItemID.Text) + ' And TNo = ' + QrySPTDetailTNo.AsString;
+  DM.CallSQL2(sql);
+  QrySPTDetail.Close;
+  QrySPTDetail.Open;
+  DM.CallSQL1('Select IsNull(Sum(Total),0) from SPTDetail');
+  lblSTotal.Caption := FloatToStr(DM.qryFR1.Fields[0].AsFloat);
+  lblGTotal.Caption := FloatToStr(DM.qryFR1.Fields[0].AsFloat);
+
+  btnUpdate.Enabled := False;
+  btnClear.Enabled := False;
+  btnClearAll.Enabled := False;
+end;
+
+procedure TfrmTransGC.FormCreate(Sender: TObject);
+begin
+  //if not assigned(frmEmp) then frmEmp := TfrmEmp.Create(Application);
+  DM.cboAdd(cboDrCode,'Select AHead + ' + QuotedStr(' - ') + ' + ACode From COA Where ALevel = ' + IntToStr(iCOALevel) + ' Order by AHead');
+  DM.cboAdd(cboCrCode,'Select AHead + ' + QuotedStr(' - ') + ' + ACode From COA Where ALevel = ' + IntToStr(iCOALevel) + ' Order by AHead');
+  DM.cboAdd(cboSPBy,'Select EmpName + ' + QuotedStr(' - ') + ' + EmpID From Employee Order by EmpName');
+  DM.cboAdd(cboEmpName,'Select EmpName + ' + QuotedStr(' - ') + ' + EmpID From Employee Order by EmpName');
+  cboEmpName.Text := '';
+end;
+
+procedure TfrmTransGC.LMDShapeButton1Click(Sender: TObject);
+begin
+  Close;
+end;
+
+procedure TfrmTransGC.cboSectNameChange(Sender: TObject);
+begin
+{  sql := 'Select WORDate,QuotID,QuotDate,DeliIDS,DeliDateS,JobDesc, JobID From WOR Where WORID = ' + QuotedStr(cboWORID.Text);
+  DM.CallSQL1(SQL);
+  dtpWORDate.DateTime := DM.qryFR1.Fields[0].AsDateTime;
+  lblQuotID.Caption := DM.qryFR1.Fields[1].AsString;
+  dtpQuotDate.DateTime := DM.qryFR1.Fields[2].AsDateTime;
+  lblChalID.Text := DM.qryFR1.Fields[3].AsString;
+  lblChalDate.Text := DM.qryFR1.Fields[4].AsString;
+  lblJobDesc.Caption := DM.qryFR1.Fields[5].AsString;
+  cboJobID.Text := DM.qryFR1.Fields[6].AsString;
+
+  sql := '';
+  sql := 'Select IName from V_Deli Where WORID = ' + QuotedStr(cboWORID.Text);
+  DM.lstAdd(lstITSelect,sql);
+  edtSpe.SetFocus; }
+end;
+
+procedure TfrmTransGC.btnNextClick(Sender: TObject);
+begin
+  if StrToFloat(edtSQty.Text) > 0 then
+  begin
+    sqt := StrToFloat(edtSQty.Text);
+    spr := StrToFloat(edtSPrice.Text);
+    spttl := sqt * spr;
+    //spttl := spttl - StrToFloat(edtDisc.Text) * spttl / 100;
+    spttl := spttl - StrToFloat(edtDisc.Text);
+    pqt := 0;
+    ppr := 0;
+  end
+  else if StrToFloat(edtPQty.Text) > 0 then
+  begin
+    pqt := StrToFloat(edtPQty.Text);
+    ppr := StrToFloat(edtPPrice.Text);
+    spttl := pqt * ppr;
+    //spttl := spttl - StrToFloat(edtDisc.Text) * spttl / 100;
+    spttl := spttl - StrToFloat(edtDisc.Text);
+    sqt := 0;
+    spr := 0;
+  end;
+  DM.CallSQL1('Select IsNull(Max(TNo),0) from SPTDetail');
+  mTNo := (DM.qryFR1.Fields[0].AsInteger) + 1;
+  with sp_SPTDetail do
+  begin
+    ParamByName('@SPType').AsInteger := mSPType;
+    ParamByName('@SPID').AsString := cboSPID.Text;
+    ParamByName('@ItemID').AsString := edtItemID.Text;
+    ParamByName('@IName').AsString := edtIName.Text;
+    ParamByName('@EmpID').AsString := Copy(cboEmpName.Text,Length(cboEmpName.Text) - 5,Length(cboEmpName.Text));
+    ParamByName('@UOMID').AsString := cboUOM.Text;
+    ParamByName('@TNo').AsInteger := mTNo;
+    ParamByName('@SQty').AsFloat := sqt;
+    ParamByName('@SPrice').AsFloat := spr;
+    ParamByName('@PQty').AsFloat := pqt;
+    ParamByName('@PPrice').AsFloat := ppr;;
+    ParamByName('@IDiscP').AsFloat := StrToFloat(edtDisc.Text);
+    ParamByName('@Total').AsFloat := spttl;
+    ExecProc;
+  end;
+  QrySPTDetail.Close;
+  QrySPTDetail.Open;
+  btnSave.Enabled := True;
+  DM.CallSQL1('Select IsNull(Sum(Total),0) from SPTDetail');
+  lblSTotal.Caption := FloatToStr(DM.qryFR1.Fields[0].AsFloat);
+  lblGTotal.Caption := FloatToStr(DM.qryFR1.Fields[0].AsFloat);
+  edtTAmt.Text := FloatToStr(DM.qryFR1.Fields[0].AsFloat);
+  cboEmpName.Text := '';
+end;
+
+procedure TfrmTransGC.CalTotal;
+var
+ttl : Double;
+begin
+  if Length(edtSQty.Text) < 1 then edtSQty.Text := '0';
+  if Length(edtSPrice.Text) < 1 then edtSPrice.Text := '0';
+  if Length(edtPQty.Text) < 1 then edtPQty.Text := '0';
+  if Length(edtPPrice.Text) < 1 then edtPPrice.Text := '0';
+  if Length(edtDisc.Text) < 1 then edtDisc.Text := '0';
+
+  if (StrToFloat(edtSQty.Text) > 0) then ttl := StrToFloat(edtSQty.Text) * StrToFloat(edtSPrice.Text) else ttl := StrToFloat(edtPQty.Text) * StrToFloat(edtPPrice.Text);
+  //ttl := ttl - StrToFloat(edtDisc.Text) * ttl / 100;
+  ttl := ttl - StrToFloat(edtDisc.Text);
+  edtTotal.Text := FloatToStr(ttl);
+end;
+
+
+procedure TfrmTransGC.edtSQtyChange(Sender: TObject);
+begin
+  CalTotal;
+end;
+
+procedure TfrmTransGC.edtPPriceChange(Sender: TObject);
+begin
+  CalTotal;
+end;
+
+procedure TfrmTransGC.edtDiscChange(Sender: TObject);
+begin
+  CalTotal;
+end;
+
+procedure TfrmTransGC.edtTotalChange(Sender: TObject);
+begin
+CalTotal;
+end;
+
+procedure TfrmTransGC.edtAdvChange(Sender: TObject);
+begin
+  if Length(edtAdv.Text) < 1 then edtAdv.Text := '0';
+  lblGTotal.Caption := FloatToStr(StrToFloat(lblSTotal.Caption) - StrToFloat(edtAdv.Text));
+  edtTAmt.Text := FloatToStr(StrToFloat(lblSTotal.Caption) - StrToFloat(edtAdv.Text));
+end;
+
+procedure TfrmTransGC.btnPostClick(Sender: TObject);
+var
+vno,Ln : integer;
+dtp,mDCode,mCCode,mVNo,mVDesc,mPayee,mEntryDT : string;
+begin
+  if (mSPType = 1) then
+    begin
+    if Length(cboVType.Text) < 2 then
+    begin
+      ShowMessage('Voucher type not selected.');
+      cboVType.SetFocus;
+      Abort;
+    end;
+    dtp := FormatDateTime('mm/dd/yyyy', dtpSPDate.Date);
+    if iCOALevel = 4 then Ln := 7 else Ln := 10;
+    Ln := Ln - 1;
+    mDCode := Copy(cboDrCode.Text,Length(cboDrCode.Text) - Ln,Length(cboDrCode.Text));
+    mCCode := Copy(cboCrCode.Text,Length(cboCrCode.Text) - Ln,Length(cboCrCode.Text));
+    if Copy(cboVType.Text,1,2) = 'JV' then mVDesc := '#JV Posted from Inventory.'
+    else if Copy(cboVType.Text,1,2) = 'CP' then mVDesc := '#CP Posted from Inventory.'
+    else if Copy(cboVType.Text,1,2) = 'CR' then mVDesc := '#CR Posted from Inventory.'
+    else if Copy(cboVType.Text,1,2) = 'BP' then mVDesc := '#BP Posted from Inventory.'
+    else if Copy(cboVType.Text,1,2) = 'BR' then mVDesc := '#BR Posted from Inventory.';
+    mPayee := Copy(cboContName.Text,1,Length(cboContName.Text) - 8);
+    mEntryDT := DateToStr(Date) + ' / ' + TimeToStr(Time);
+    //******************************************************
+    if (Copy(cboVType.Text,1,2) = 'CR') or (Copy(cboVType.Text,1,2) = 'BR') then
+    begin
+      if iVNoSerial=1 then sql := 'select Isnull(max(VNo),0) + 1 from ' + iCYVData + ' Where SectID=' + mSectID
+      else if iVNoSerial=2 then sql := 'select Isnull(max(VNo),0) + 1 from ' + iCYVData + ' Where SectID=' + QuotedStr(Copy(cboSectName.Text,1,2)) + ' and DeptID=' + QuotedStr(Copy(cboDeptName.Text,1,2))
+      else if iVNoSerial=3 then sql := 'select Isnull(max(VNo),0) + 1 from ' + iCYVData + ' Where SectID=' + QuotedStr(Copy(cboSectName.Text,1,2))
+      else if iVNoSerial=4 then sql := 'select Isnull(max(VNo),0) + 1) from ' + iCYVData + ' Where DeptID=' + QuotedStr(Copy(cboDeptName.Text,1,2))
+      else if iVNoSerial=5 then sql := 'select Isnull(max(VNo),0) + 1 from ' + iCYVData + ' Where VType=' + QuotedStr('JV')
+      else sql := 'select Isnull(max(VNo),0) + 1 from ' + iCYVData;
+      DM.CallSQL1(sql);
+      mVNo := DM.qryFR1.Fields[0].AsString;
+      sql := '';
+      sql := 'Insert Into ' + iCYVData + '(VDate,VType,VNo,TNo,ACode,VDesc,JobID,Debit,Credit,Payee,ChqNo,UserID,EntryDT,IsConf,BillNo) Values (';
+      sql := sql + QuotedStr(dtp) + ', ' + QuotedStr('JV') + ', ' + mVNo + ', ' + '1' + ', ' + QuotedStr(mCCode) + ', ' + QuotedStr('#JV Posted from Inventory.') + ', ' + QuotedStr('000000') + ', ' + lblGTotal.Caption + ', ' + '0' + ', ' + QuotedStr(mPayee) + ', ' + QuotedStr(edtChq.Text) + ',' + QuotedStr(iUserID) + ', ' + QuotedStr(mEntryDT) + ',' + QuotedStr('F') + ',' + QuotedStr(cboSPID.Text) + ')';
+      DM.CallSQL2(sql);
+      sql := '';
+      sql := 'Insert Into ' + iCYVData + '(VDate,VType,VNo,TNo,ACode,VDesc,JobID,Debit,Credit,Payee,ChqNo,UserID,EntryDT,IsConf,BillNo) Values (';
+      sql := sql + QuotedStr(dtp) + ', ' + QuotedStr('JV') + ', ' + mVNo + ', ' + '2' + ', ' + QuotedStr('3010101002') + ', ' + QuotedStr('#JV Posted from Inventory.') + ', ' + QuotedStr('000000') + ', ' + '0' + ', ' + lblGTotal.Caption + ', ' + QuotedStr(mPayee) + ', ' + QuotedStr(edtChq.Text) + ',' + QuotedStr(iUserID) + ', ' + QuotedStr(mEntryDT) + ', ' + QuotedStr('F') + ',' + QuotedStr(cboSPID.Text) + ')';
+      DM.CallSQL2(sql);
+    end;
+    //******************************************************
+    sql := '';
+    sql := 'Insert Into ' + iCYVData + '(VDate,VType,VNo,TNo,ACode,VDesc,JobID,Debit,Credit,Payee,ChqNo,UserID,EntryDT,IsConf,BillNo) Values (';
+    sql := sql + QuotedStr(dtp) + ', ' + QuotedStr(Copy(cboVType.Text,1,2)) + ', ' + edtVNo.Text + ', ' + '1' + ', ' + QuotedStr(mDCode) + ', ' + QuotedStr(mVDesc) + ', ' + QuotedStr('000000') + ', ' + edtTAmt.Text + ', ' + '0' + ', ' + QuotedStr(mPayee) + ', ' + QuotedStr(edtChq.Text) + ',' + QuotedStr(iUserID) + ', ' + QuotedStr(mEntryDT) + ',' + QuotedStr('F') + ',' + QuotedStr(cboSPID.Text) + ')';
+    DM.CallSQL2(sql);
+
+    sql := '';
+    sql := 'Insert Into ' + iCYVData + '(VDate,VType,VNo,TNo,ACode,VDesc,JobID,Debit,Credit,Payee,ChqNo,UserID,EntryDT,IsConf,BillNo) Values (';
+    sql := sql + QuotedStr(dtp) + ', ' + QuotedStr(Copy(cboVType.Text,1,2)) + ', ' + edtVNo.Text + ', ' + '2' + ', ' + QuotedStr(mCCode) + ', ' + QuotedStr(mVDesc) + ', ' + QuotedStr('000000') + ', ' + '0' + ', ' + edtTAmt.Text + ', ' + QuotedStr(mPayee) + ', ' + QuotedStr(edtChq.Text) + ',' + QuotedStr(iUserID) + ', ' + QuotedStr(mEntryDT) + ', ' + QuotedStr('F') + ',' + QuotedStr(cboSPID.Text) + ')';
+    DM.CallSQL2(sql);
+
+    ShowMessage('Voucher Posted Successfully');
+    btnPost.Enabled := False;
+    pnlVoucher.Enabled := False;
+    cboVType.Text := '';
+    edtVNo.Text := '';
+    edtChq.Text := '';
+    cboDrCode.Text := '';
+    cboCrCode.Text := '';
+  end;
+end;
+
+procedure TfrmTransGC.btnITSelectClick(Sender: TObject);
+begin
+  inherited;
+    if not assigned(frmITSelect) then frmITSelect:= TfrmITSelect.Create(Application);
+    if frmITSelect.ShowModalItem = mrOk then
+    begin
+      edtItemID.Text := frmITSelect.QryItemItemID.AsString;
+      edtIName.Text := frmITSelect.QryItemIName.AsString;
+      //edtIName.Text := frmITSelect.QryItemOutputName.AsString;
+      cboUOM.Text := frmITSelect.QryItemuomid.AsString;
+    end;
+    cboEmpName.SetFocus;
+    //if edtSQty.Enabled = True then edtSQty.SetFocus else edtPQty.SetFocus;
+end;
+
+procedure TfrmTransGC.cboVTypeChange(Sender: TObject);
+begin
+  if iVNoSerial=1 then sql := 'select Isnull(max(VNo),0) + 1 from ' + iCYVData + ' Where SectID=' + mSectID
+  else if iVNoSerial=2 then sql := 'select Isnull(max(VNo),0) + 1 from ' + iCYVData + ' Where SectID=' + QuotedStr(Copy(cboSectName.Text,1,2)) + ' and DeptID=' + QuotedStr(Copy(cboDeptName.Text,1,2))
+  else if iVNoSerial=3 then sql := 'select Isnull(max(VNo),0) + 1 from ' + iCYVData + ' Where SectID=' + QuotedStr(Copy(cboSectName.Text,1,2))
+  else if iVNoSerial=4 then sql := 'select Isnull(max(VNo),0) + 1) from ' + iCYVData + ' Where DeptID=' + QuotedStr(Copy(cboDeptName.Text,1,2))
+  else if iVNoSerial=5 then sql := 'select Isnull(max(VNo),0) + 1 from ' + iCYVData + ' Where VType=' + QuotedStr(Copy(cboVType.Text, 1, 2))
+  else sql := 'select Isnull(max(VNo),0) + 1 from ' + iCYVData;
+  DM.CallSQL1(sql);
+  edtVNo.Text := IntToStr(DM.qryFR1.Fields[0].AsInteger);
+  if (Copy(cboVType.Text,1,2) = 'BP') or (Copy(cboVType.Text,1,2) = 'BR') then edtChq.Enabled := True
+  else
+  begin
+    edtChq.Enabled := False;
+    edtChq.Text := '';
+  end;
+end;
+
+procedure TfrmTransGC.DBGrid1DblClick(Sender: TObject);
+begin
+  edtItemID.Text := QrySPTDetailITEMID.AsString;
+  edtIName.Text := QrySPTDetailIName.AsString;
+  cboEmpName.Text := QrySPTDetailEmpName.AsString + ' - ' + QrySPTDetailEmpID.AsString;
+  cboUOM.Text := QrySPTDetailUOMID.AsString;
+  //if (mSPType = 1) then (edtQty.Text := tblSPTDetailIssQty.AsString) else (edtQty.Text := tblSPTDetailRecQty.AsString);
+  edtSQty.Text := QrySPTDetailSQty.AsString;
+  edtSPrice.Text := QrySPTDetailSPrice.AsString;
+  edtPQty.Text := QrySPTDetailPQty.AsString;
+  edtPPrice.Text := QrySPTDetailPPrice.AsString;
+  edtDisc.Text := QrySPTDetailIDiscP.AsString;
+  edtTotal.Text := QrySPTDetailTotal.AsString;
+  btnUpdate.Enabled := True;
+  btnClear.Enabled := True;
+  btnClearAll.Enabled := True;
+end;
+
+procedure TfrmTransGC.btnUpdateClick(Sender: TObject);
+begin
+  if StrToFloat(edtSQty.Text) > 0 then
+  begin
+    sqt := StrToFloat(edtSQty.Text);
+    spr := StrToFloat(edtSPrice.Text);
+    spttl := sqt * spr;
+    //spttl := spttl - StrToFloat(edtDisc.Text) * spttl / 100;
+    spttl := spttl - StrToFloat(edtDisc.Text);
+    pqt := 0;
+    ppr := 0;
+  end
+  else if StrToFloat(edtPQty.Text) > 0 then
+  begin
+    pqt := StrToFloat(edtPQty.Text);
+    ppr := StrToFloat(edtPPrice.Text);
+    spttl := pqt * ppr;
+    //spttl := spttl - StrToFloat(edtDisc.Text) * spttl / 100;
+    spttl := spttl - StrToFloat(edtDisc.Text);
+    sqt := 0;
+    spr := 0;
+  end;
+  sql := '';
+  //sql := 'Update SPTDetail set ItemID = ' + QuotedStr(edtItemID.Text) + ',IName=' + QuotedStr(edtIName.Text) + ',UOMID=' + QuotedStr(cboUOM.Text) + ',IssQty=' + FloatToStr(iqty) + ',RecQty = ' + FloatToStr(rqty) + ',Price=' + edtPrice.Text + ',IDiscP = ' + edtDisc.Text + ',Total=' + edtTotal.Text + ' Where ItemID = ' + QuotedStr(edtItemID.Text) + ' And TNo = ' + tblSPTDetailTNo.AsString;
+  sql := 'Update SPTDetail set ItemID = ' + QuotedStr(edtItemID.Text) + ',IName=' + QuotedStr(edtIName.Text) + ',EmpID=' + QuotedStr(Copy(cboEmpName.Text,Length(cboEmpName.Text) - 5,Length(cboEmpName.Text))) + ',UOMID=' + QuotedStr(cboUOM.Text) + ',SQty=' + FloatToStr(sqt) + ',SPrice = ' + FloatToStr(spr) + ',PQty = ' + FloatToStr(pqt) + ',PPrice=' + FloatToStr(ppr) + ',IDiscP = ' + edtDisc.Text + ',Total=' + FloatToStr(spttl) + ' Where ItemID = ' + QuotedStr(edtItemID.Text) + ' And TNo = ' + QrySPTDetailTNo.AsString;
+  DM.CallSQL2(sql);
+  QrySPTDetail.Close;
+  QrySPTDetail.Open;
+  DM.CallSQL1('Select IsNull(Sum(Total),0) from SPTDetail');
+  lblSTotal.Caption := FloatToStr(DM.qryFR1.Fields[0].AsFloat);
+  lblGTotal.Caption := FloatToStr(DM.qryFR1.Fields[0].AsFloat);
+  edtTAmt.Text := FloatToStr(DM.qryFR1.Fields[0].AsFloat);
+
+  btnUpdate.Enabled := False;
+  btnClear.Enabled := False;
+  btnClearAll.Enabled := False;
+end;
+
+procedure TfrmTransGC.btnClearAllClick(Sender: TObject);
+begin
+  DM.CallSQL2('Delete from SPTDetail');
+  QrySPTDetail.Close;
+  QrySPTDetail.Open;
+  lblSTotal.Caption := '0';
+  lblGTotal.Caption := '0';
+  btnUpdate.Enabled := False;
+  btnClear.Enabled := False;
+  btnClearAll.Enabled := False;
+end;
+
+procedure TfrmTransGC.cboSPIDClick(Sender: TObject);
+begin
+  QryType := 2;
+  sql := '';
+  sql := 'Select SPDate,SPBy,ContID,SectID,DeptID,ReqID,ReqDate,VType,VNo from SP where SPID = ' + QuotedStr(cboSPID.Text);
+  DM.CallSQL1(sql);
+  dtpSPDate.DateTime := DM.qryFR1.Fields[0].AsDateTime;
+  cboSPBy.Text := DM.qryFR1.Fields[1].AsString;
+  cboContName.Text := DM.qryFR1.Fields[2].AsString;
+  cboSectName.Text := DM.qryFR1.Fields[3].AsString;
+  cboDeptName.Text := DM.qryFR1.Fields[4].AsString;
+  cboReqID.Text := DM.qryFR1.Fields[5].AsString;
+  dtpReqDate.DateTime := DM.qryFR1.Fields[6].AsDateTime;
+  cboVType.Text := DM.qryFR1.Fields[7].AsString;
+  edtVNo.Text := DM.qryFR1.Fields[8].AsString;
+
+  sql := '';
+  sql := 'Select EmpName,EmpID from Employee where EmpID = ' + QuotedStr(cboSPBy.Text);
+  DM.CallSQL1(sql);
+  cboSPBy.Text := (DM.qryFR1.Fields[0].AsString) + ' - ' + (DM.qryFR1.Fields[1].AsString);
+
+  sql := '';
+  sql := 'Select ContName,ContID,Addr from Contact where ContID = ' + QuotedStr(cboContName.Text);
+  DM.CallSQL1(sql);
+  cboContName.Text := (DM.qryFR1.Fields[0].AsString) + ' - ' + (DM.qryFR1.Fields[1].AsString);
+  edtAddr.Text := DM.qryFR1.Fields[2].AsString;
+//************************************
+  if (Length(cboVType.Text) > 0) And (StrToInt(edtVNo.Text) > 0) then
+  begin
+    sql := '';
+    sql := 'SELECT ' + iCYVData + '.Vtype, ' + iCYVData + '.VNo, ' + iCYVData + '.ACode,COA.AHead, ' + iCYVData + '.Debit,' + iCYVData + '.Credit,' + iCYVData + '.ChqNo FROM COA INNER JOIN ' + iCYVData + ' ON COA.ACode = ' + iCYVData + '.ACode Where (' + iCYVData + '.VType = ' + QuotedStr(Copy(cboVType.Text,1,2)) + ') And (' + iCYVData + '.VNo = ' + edtVNo.Text + ') And (' + iCYVData + '.Credit = 0)';
+    DM.CallSQL1(sql);
+    cboDrCode.Text := DM.qryFR1.Fields[3].AsString + ' - ' +  DM.qryFR1.Fields[2].AsString;
+    edtchq.Text := DM.qryFR1.Fields[6].AsString;
+    sql := '';
+    sql := 'SELECT ' + iCYVData + '.Vtype, ' + iCYVData + '.VNo, ' + iCYVData + '.ACode,COA.AHead, ' + iCYVData + '.Debit,' + iCYVData + '.Credit FROM COA INNER JOIN ' + iCYVData + ' ON COA.ACode = ' + iCYVData + '.ACode Where (' + iCYVData + '.VType = ' + QuotedStr(Copy(cboVType.Text,1,2)) + ') And (' + iCYVData + '.VNo = ' + edtVNo.Text + ') And (' + iCYVData + '.Debit = 0)';
+    DM.CallSQL1(sql);
+    cboCrCode.Text := DM.qryFR1.Fields[3].AsString + ' - ' +  DM.qryFR1.Fields[2].AsString;
+  end;
+//************************************
+  DM.CallSQL2('Delete from SPTDetail');
+  sql := '';
+  sql := 'Insert into SPTDetail Select * from SPDetail where SPID = ' + QuotedStr(cboSPID.Text);
+  DM.CallSQL2(sql);
+  QrySPTDetail.Close;
+  QrySPTDetail.Open;
+  btnSave.Enabled := True;
+  DM.CallSQL1('Select IsNull(Sum(Total),0) from SPTDetail');
+  lblSTotal.Caption := FloatToStr(DM.qryFR1.Fields[0].AsFloat);
+  lblGTotal.Caption := FloatToStr(DM.qryFR1.Fields[0].AsFloat);
+  pnlVoucher.Enabled := False;
+end;
+
+procedure TfrmTransGC.cboSPIDKeyPress(Sender: TObject; var Key: Char);
+begin
+  if Key = #13 then dtpSPDate.SetFocus;
+end;
+
+procedure TfrmTransGC.dtpSPDateKeyPress(Sender: TObject; var Key: Char);
+begin
+  if Key = #13 then cboSPBy.SetFocus;
+end;
+
+procedure TfrmTransGC.cboSPByKeyPress(Sender: TObject; var Key: Char);
+begin
+  if Key = #13 then cboContName.SetFocus;
+end;
+
+procedure TfrmTransGC.cboContNameKeyPress(Sender: TObject; var Key: Char);
+begin
+  if Key = #13 then cboSectName.SetFocus;
+end;
+
+procedure TfrmTransGC.cboSectNameKeyPress(Sender: TObject; var Key: Char);
+begin
+  if Key = #13 then cboDeptName.SetFocus;
+end;
+
+procedure TfrmTransGC.cboDeptNameKeyPress(Sender: TObject; var Key: Char);
+begin
+  if Key = #13 then cboReqID.SetFocus;
+end;
+
+procedure TfrmTransGC.cboReqIDKeyPress(Sender: TObject; var Key: Char);
+begin
+  if Key = #13 then dtpReqDate.SetFocus;
+end;
+
+procedure TfrmTransGC.dtpReqDateKeyPress(Sender: TObject; var Key: Char);
+begin
+  if Key = #13 then btnITSelect.SetFocus;
+end;
+
+procedure TfrmTransGC.cboUOMKeyPress(Sender: TObject; var Key: Char);
+begin
+  if Key = #13 then
+  begin
+    //if edtSQty.Enabled = True then edtSQty.SetFocus else edtPQty.SetFocus;
+    if edtSQty.Enabled = True then edtW.SetFocus else edtR.SetFocus;
+  end;
+end;
+
+procedure TfrmTransGC.edtDiscKeyPress(Sender: TObject; var Key: Char);
+begin
+  if Key = #13 then
+  begin
+    if btnUpdate.Enabled = True then btnUpdate.SetFocus else btnNext.SetFocus;
+  end;
+end;
+
+procedure TfrmTransGC.edtSQtyKeyPress(Sender: TObject; var Key: Char);
+begin
+  if Key = #13 then edtSPrice.SetFocus;
+end;
+
+procedure TfrmTransGC.edtPQtyKeyPress(Sender: TObject; var Key: Char);
+begin
+  if Key = #13 then edtPPrice.SetFocus;
+end;
+
+procedure TfrmTransGC.edtSPriceKeyPress(Sender: TObject; var Key: Char);
+begin
+  if Key = #13 then edtDisc.SetFocus;
+end;
+
+procedure TfrmTransGC.edtPPriceKeyPress(Sender: TObject; var Key: Char);
+begin
+  if Key = #13 then edtDisc.SetFocus;
+end;
+
+procedure TfrmTransGC.edtPQtyChange(Sender: TObject);
+begin
+  CalTotal;
+end;
+
+procedure TfrmTransGC.btnInvoiceClick(Sender: TObject);
+var
+inv : TrptInvoice;
+begin
+  sql := '';
+  sql := 'Select * from V_SP where SPID = ' + QuotedStr(cboSPID.Text) + ' Order by TNo';
+  inv := TrptInvoice.Create(Application);
+  inv.lblCompany.Caption := iCompany;
+  inv.lblAddr1.Caption := iAddress1;
+  inv.lblAddr2.Caption := iAddress2;
+  inv.qryInv.SQL.Clear;
+  inv.qryInv.SQL.Add(sql);
+  inv.qryInv.Close;
+  inv.qryInv.Open;
+  inv.QRep.Preview;
+end;
+
+procedure TfrmTransGC.cboEmpNameKeyPress(Sender: TObject; var Key: Char);
+begin
+  if Key = #13 then cboUOM.SetFocus;
+end;
+
+procedure TfrmTransGC.edtWKeyPress(Sender: TObject; var Key: Char);
+begin
+  if Key = #13 then edtL.SetFocus;
+end;
+
+procedure TfrmTransGC.edtLKeyPress(Sender: TObject; var Key: Char);
+begin
+  if Key = #13 then
+  begin
+    if edtSQty.Enabled = True then edtSQty.SetFocus else edtPQty.SetFocus;
+    edtSQty.SetFocus;
+ end;
+end;
+
+procedure TfrmTransGC.edtWChange(Sender: TObject);
+begin
+  if Length(edtW.Text) < 1 then edtW.Text := '0';
+  if Length(edtL.Text) < 1 then edtL.Text := '0';
+  if Length(edtSQty.Text) < 1 then edtSQty.Text := '0';
+  edtSQty.Text := FloatToStr(StrToFloat(edtW.Text) * StrToFloat(edtL.Text));
+end;
+
+procedure TfrmTransGC.edtLChange(Sender: TObject);
+begin
+  if Length(edtW.Text) < 1 then edtW.Text := '0';
+  if Length(edtL.Text) < 1 then edtL.Text := '0';
+  if Length(edtSQty.Text) < 1 then edtSQty.Text := '0';
+  edtSQty.Text := FloatToStr(StrToFloat(edtW.Text) * StrToFloat(edtL.Text));
+end;
+
+procedure TfrmTransGC.btnMRClick(Sender: TObject);
+var
+mr : TrptMR;
+begin
+  sql := '';
+  sql := 'Select * from V_SP where SPID = ' + QuotedStr(cboSPID.Text);
+  mr := TrptMR.Create(Application);
+  mr.lblCompany.Caption := iCompany;
+  mr.lblAddr1.Caption := iAddress1;
+  mr.lblAddr2.Caption := iAddress2;
+
+  mr.lblSPID.Caption := cboSPID.Text;
+  mr.lblContName.Caption := Copy(cboContName.Text,1,Length(cboContName.Text) - 8);
+  mr.lblDate.Caption := DateToStr(dtpSPDate.Date);
+  mr.lblAmount.Caption := FormatFloat('##,##,##,###.00',StrToFloat(lblGTotal.Caption));
+  mr.lblTIW.Caption := '(Tk. ' + edtTIW.Text + ' only)';
+  mr.qryInv.SQL.Clear;
+  mr.qryInv.SQL.Add(sql);
+  mr.qryInv.Close;
+  mr.qryInv.Open;
+  mr.QRep.Preview;
+end;
+
+procedure TfrmTransGC.edtMtrChange(Sender: TObject);
+var
+r,m,s,pq : double;
+begin
+  if Length(edtR.Text) < 1 then edtR.Text := '0';
+  if Length(edtMtr.Text) < 1 then edtMtr.Text := '0';
+  if Length(edtSqIn.Text) < 1 then edtSqIn.Text := '0';
+  if Length(edtPQty.Text) < 1 then edtPQty.Text := '0';
+  r := StrToFloat(edtR.Text);
+  m := StrToFloat(edtMtr.Text);
+  pq := (r * m * 39.27);
+  edtPQty.Text := FloatToStr(pq);
+end;
+
+procedure TfrmTransGC.edtMtrKeyPress(Sender: TObject; var Key: Char);
+begin
+  if Key = #13 then edtPQty.SetFocus;
+end;
+
+procedure TfrmTransGC.edtSqInChange(Sender: TObject);
+var
+r,m,s,pq : double;
+begin
+  if Length(edtR.Text) < 1 then edtR.Text := '0';
+  if Length(edtMtr.Text) < 1 then edtMtr.Text := '0';
+  if Length(edtSqIn.Text) < 1 then edtSqIn.Text := '0';
+  if Length(edtPQty.Text) < 1 then edtPQty.Text := '0';
+  r := StrToFloat(edtR.Text);
+  m := StrToFloat(edtMtr.Text);
+  pq := (r * m * 39.27);
+  edtPQty.Text := FloatToStr(pq);
+end;
+
+procedure TfrmTransGC.cboUOMExit(Sender: TObject);
+begin
+  {if Length(edtItemID.Text) > 0 then
+  begin
+   sql := 'Select ItemID, IName, SPrice, UOMID From Item Where ItemID=' + QuotedStr(edtItemID.Text) + ' And CurQty > 0';
+   DM.CallSQL1(sql);
+   edtIName.Text := DM.qryFR1.Fields[1].AsString;
+   edtSPrice.Text := DM.qryFR1.Fields[2].AsString;
+   cboUOM.Text := DM.qryFR1.Fields[3].AsString; 
+ end;}
+end;
+
+procedure TfrmTransGC.edtRKeyPress(Sender: TObject; var Key: Char);
+begin
+  if Key = #13 then edtMtr.SetFocus;
+end;
+
+procedure TfrmTransGC.edtRChange(Sender: TObject);
+var
+r,m,s,pq : double;
+begin
+  if Length(edtR.Text) < 1 then edtR.Text := '0';
+  if Length(edtMtr.Text) < 1 then edtMtr.Text := '0';
+  if Length(edtSqIn.Text) < 1 then edtSqIn.Text := '0';
+  if Length(edtPQty.Text) < 1 then edtPQty.Text := '0';
+  r := StrToFloat(edtR.Text);
+  m := StrToFloat(edtMtr.Text);
+  pq := (r * m * 39.27);
+  edtPQty.Text := FloatToStr(pq);
+end;
+
+end.
+                                                                                                                                                                                                                                                                                                                                                          object frmTransGC: TfrmTransGC
+  Left = 44
+  Top = 144
+  BorderStyle = bsDialog
+  Caption = 'Sales / Purchase'
+  ClientHeight = 460
+  ClientWidth = 723
+  Color = 15509143
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poMainFormCenter
+  OnActivate = FormActivate
+  OnCreate = FormCreate
+  PixelsPerInch = 96
+  TextHeight = 13
+  object lblTransIDCap: TLabel
+    Left = 5
+    Top = 6
+    Width = 40
+    Height = 13
+    Caption = 'Trans. #'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
+  end
+  object lblTransDate: TLabel
+    Left = 174
+    Top = 5
+    Width = 32
+    Height = 13
+    AutoSize = False
+    Caption = 'Date :'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
+  end
+  object lblTransBy: TLabel
+    Left = 5
+    Top = 26
+    Width = 51
+    Height = 13
+    Caption = 'Trans. By :'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label3: TLabel
+    Left = 5
+    Top = 70
+    Width = 44
+    Height = 13
+    Caption = 'Address :'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
+  end
+  object lblSectName: TLabel
+    Left = 397
+    Top = 5
+    Width = 37
+    Height = 13
+    Caption = 'Sector :'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
+  end
+  object lblCont: TLabel
+    Left = 5
+    Top = 49
+    Width = 44
+    Height = 13
+    Caption = 'Supplier :'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
+  end
+  object lblIndentDate: TLabel
+    Left = 340
+    Top = 475
+    Width = 56
+    Height = 13
+    Caption = 'Indent Date'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
+  end
+  object lblDeptName: TLabel
+    Left = 397
+    Top = 26
+    Width = 61
+    Height = 13
+    Caption = 'Department :'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label12: TLabel
+    Left = 110
+    Top = 127
+    Width = 65
+    Height = 13
+    Caption = 'Description'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clNavy
+    Font.Height = -11
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label14: TLabel
+    Left = 5
+    Top = 127
+    Width = 22
+    Height = 13
+    Caption = 'ID#'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clNavy
+    Font.Height = -11
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label15: TLabel
+    Left = 317
+    Top = 127
+    Width = 24
+    Height = 13
+    Caption = 'Unit'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clNavy
+    Font.Height = -11
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label16: TLabel
+    Left = 362
+    Top = 127
+    Width = 32
+    Height = 13
+    Caption = 'S.Qty'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clNavy
+    Font.Height = -11
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label17: TLabel
+    Left = 517
+    Top = 127
+    Width = 42
+    Height = 13
+    Caption = 'P.Price'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clNavy
+    Font.Height = -11
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label18: TLabel
+    Left = 571
+    Top = 127
+    Width = 30
+    Height = 13
+    Caption = 'Disc.'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clNavy
+    Font.Height = -11
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label19: TLabel
+    Left = 623
+    Top = 127
+    Width = 30
+    Height = 13
+    Caption = 'Total'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clNavy
+    Font.Height = -11
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label2: TLabel
+    Left = 6
+    Top = 311
+    Width = 71
+    Height = 13
+    Alignment = taRightJustify
+    Caption = 'Taka in Word :'
+  end
+  object lblReq: TLabel
+    Left = 397
+    Top = 48
+    Width = 33
+    Height = 13
+    Caption = 'Req. #'
+  end
+  object lblReqdate: TLabel
+    Left = 571
+    Top = 48
+    Width = 49
+    Height = 13
+    Caption = 'Req. Date'
+  end
+  object lblIndent: TLabel
+    Left = 189
+    Top = 474
+    Width = 40
+    Height = 13
+    Caption = 'Indent #'
+  end
+  object Label7: TLabel
+    Left = 466
+    Top = 127
+    Width = 32
+    Height = 13
+    Caption = 'P.Qty'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clNavy
+    Font.Height = -11
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label8: TLabel
+    Left = 409
+    Top = 127
+    Width = 42
+    Height = 13
+    Caption = 'S.Price'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clNavy
+    Font.Height = -11
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label11: TLabel
+    Left = 255
+    Top = 127
+    Width = 51
+    Height = 13
+    Caption = 'Designer'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clNavy
+    Font.Height = -11
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label13: TLabel
+    Left = 360
+    Top = 93
+    Width = 11
+    Height = 13
+    Caption = 'W'
+  end
+  object Label21: TLabel
+    Left = 388
+    Top = 93
+    Width = 6
+    Height = 13
+    Caption = 'L'
+  end
+  object Label22: TLabel
+    Left = 486
+    Top = 93
+    Width = 23
+    Height = 13
+    Caption = 'Mitre'
+  end
+  object Label23: TLabel
+    Left = 517
+    Top = 109
+    Width = 44
+    Height = 13
+    Caption = '1 Mitre = '
+  end
+  object Label24: TLabel
+    Left = 605
+    Top = 109
+    Width = 40
+    Height = 13
+    Caption = 'Sqr. Inc.'
+  end
+  object Label26: TLabel
+    Left = 458
+    Top = 93
+    Width = 16
+    Height = 13
+    Caption = 'Rol'
+  end
+  object Panel5: TPanel
+    Left = 2
+    Top = 418
+    Width = 461
+    Height = 39
+    BevelOuter = bvNone
+    BorderStyle = bsSingle
+    Color = clSilver
+    TabOrder = 16
+    object btnAdd: TLMDShapeButton
+      Left = 7
+      Top = 4
+      Width = 85
+      Height = 27
+      Caption = '&Add'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -13
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold]
+      ParentFont = False
+      OnClick = btnAddClick
+      AllowTransparency = True
+      AllowMouseOver = False
+      MouseOver = False
+      Mode = sbmShapeFill
+      Shape.Brush.Color = clBtnFace
+      Shape.RoundPercent = 100
+      Shape.Shadow.Depth = 0
+      Shape.Shape = stRoundRect
+      Style = sbs3D
+      ShapeFill.Style = sfGradient
+    end
+    object btnSave: TLMDShapeButton
+      Left = 271
+      Top = 4
+      Width = 85
+      Height = 27
+      Caption = '&Save'
+      Enabled = False
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -13
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold]
+      ParentFont = False
+      OnClick = btnSaveClick
+      AllowTransparency = True
+      AllowMouseOver = False
+      MouseOver = False
+      Mode = sbmShapeFill
+      Shape.Brush.Color = clBtnFace
+      Shape.RoundPercent = 100
+      Shape.Shadow.Depth = 0
+      Shape.Shape = stRoundRect
+      Style = sbs3D
+      ShapeFill.Style = sfGradient
+    end
+    object btnPost: TLMDShapeButton
+      Left = 359
+      Top = 4
+      Width = 85
+      Height = 27
+      Caption = 'Post'
+      Enabled = False
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -13
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold]
+      ParentFont = False
+      OnClick = btnPostClick
+      AllowTransparency = True
+      AllowMouseOver = False
+      MouseOver = False
+      Mode = sbmShapeFill
+      Shape.Brush.Color = clBtnFace
+      Shape.RoundPercent = 100
+      Shape.Shadow.Depth = 0
+      Shape.Shape = stRoundRect
+      Style = sbs3D
+      ShapeFill.Style = sfGradient
+    end
+    object btnClear: TLMDShapeButton
+      Left = 95
+      Top = 4
+      Width = 85
+      Height = 27
+      Caption = 'Clear'
+      Enabled = False
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -13
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold]
+      ParentFont = False
+      OnClick = btnClearClick
+      AllowTransparency = True
+      AllowMouseOver = False
+      MouseOver = False
+      Mode = sbmShapeFill
+      Shape.Brush.Color = clBtnFace
+      Shape.RoundPercent = 100
+      Shape.Shadow.Depth = 0
+      Shape.Shape = stRoundRect
+      Style = sbs3D
+      ShapeFill.Style = sfGradient
+    end
+    object btnClearAll: TLMDShapeButton
+      Left = 183
+      Top = 4
+      Width = 85
+      Height = 27
+      Caption = 'Clear All'
+      Enabled = False
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -13
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold]
+      ParentFont = False
+      OnClick = btnClearAllClick
+      AllowTransparency = True
+ 

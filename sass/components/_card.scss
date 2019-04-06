@@ -1,0 +1,10 @@
+.card {
+    padding: 1.5rem;
+
+    &__title {
+        &:not(:last-child) {
+            border-bottom: 2px solid $color-primary;
+        }
+        padding: .5rem;
+    }
+}

@@ -1,0 +1,14 @@
+{
+  "name": "poweraddengineering",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass":"node-sass sass/main.scss css/style.css -w"
+  },
+  "author": "DOTBD",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "node-sass": "^4.10.0"
+  }
+}

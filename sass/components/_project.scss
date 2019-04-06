@@ -1,0 +1,41 @@
+.project {
+    margin-bottom: 30px;
+    border: 1px solid $color-primary-light;
+    box-shadow: 0 2px 3px rgba(0,0,0,0.2);
+    &__btn {
+        font-size: 1.6rem;
+        font-family: inherit;
+        color: inherit;
+        font-weight: 600;
+        text-align: left;
+        padding: 10px;
+        border: 0;
+        background: #fff;
+        cursor: pointer;
+        width: 100%;
+        transition: all 1s;
+        &:focus {
+            outline: none;
+        }
+        // &:hover {
+        //     background-color: $color-primary-light !important;
+        //     color: #fff !important;
+        // }
+        &::after {
+            content: '\f103';
+            font-family: 'fontawesome';
+            font-size: 2rem;
+            float: right;
+            margin: 0 10px;
+            font-weight: bolder;
+        }
+    }
+    
+    &__content {
+        // margin: 8px;
+        max-height: 0;
+        // margin-left: 20px;
+        overflow: hidden;
+        transition: max-height 0.5s ease-in-out;
+    }
+}

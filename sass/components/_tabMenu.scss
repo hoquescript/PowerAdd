@@ -1,0 +1,60 @@
+.tab {
+    // box-shadow: 0 5px 8px rgba(0, 0, 0, 0.4);
+
+    &__btn-container {
+        display: inline-block;
+        padding: 0;
+        margin: 0;
+        @include clearfix;
+        box-shadow: 2px 0 8px rgba(0, 0, 0, 0.4);
+    }
+
+    &__btn {
+        cursor: pointer;
+        float: left;
+        padding: 1.5rem 1.8rem;
+
+        font-size: 1.6rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: $color-primary;
+
+        background-color: $color-primary;
+        color: #fff;
+
+        transition: background-color 0.4s;
+        &:not(:last-child) {
+            border-right: 2px solid #fff;
+        }
+
+        &--active,
+        &:hover {
+            background-color: #fff;
+            color: $color-primary;
+        }
+    }
+
+    &__content {
+        box-shadow: 2px 5px 8px rgba(0, 0, 0, 0.4);
+        background-color: #fff;
+        min-height: 35rem;
+        // overflow-y: scroll;
+        // background-color: $color-grey-light-1;
+        padding: 1.5rem 1.8rem;
+
+        p {
+            margin-bottom: .4rem;
+        }
+        column-count: 2;
+        column-gap: 2rem;
+        column-rule: 1px solid #ccc;
+        &> *{
+            padding: 1.5rem 3rem;
+            ul ol{
+                margin-left: 1rem;
+            }
+        }
+        
+    }
+}
